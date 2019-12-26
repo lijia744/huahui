@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>美容师分析表</title>
+    <script src="./js/publicSize.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="js/pageinit.js"></script>
+    <script src="./js/pagenavigation.js"></script>
+
+    <link href="./css/public.css" rel="stylesheet" />
+    <link href="./css/consumption.css" rel="stylesheet">
+    <script src="./laydate/laydate.js"></script>
+    <link href="./css/mask.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="consumption">
+        <header>
+            <div class="left">
+                <p id="username">花惠の小铺</p>
+                <span id="userid">ID:10201351</span>
+            </div>
+            <div class="right" id="changeshopbtn">
+                <button class="change" id="btn">切换店铺</button>
+            </div>
+        </header>
+        <div class="container">
+            <div class="title">
+                <select class="form" id="pagelist" name="">
+                    <option value="美容师分析表">美容师分析表</option>
+                    <option value="技师分析表">技师分析表</option>
+                    <option value="项目分析表">项目分析表</option>
+                    <option value="经营分析表">经营分析表</option>
+                    <option value="客流分析表">客流分析表</option>
+                    <option value="顾客消费动态">顾客消费动态</option>
+                    <option value="顾问分析表">顾问分析表</option>
+
+
+                </select>
+                <select class="report" id="period" name="">
+                    <option value="日报">日报</option>
+                    <option value="周报">周报</option>
+                    <option value="月报">月报</option>
+                    <option value="季报">季报</option>
+                    <option value="年报">年报</option>
+                    <option value="其他">时间选择</option>
+                </select>
+                <select class="pay" id="fenxi" name="">
+                    <option value="1">现金</option>
+                    <option value="0">实操</option>
+                    <option value="2">所有</option>
+                </select>
+            </div>
+            <div class="search">
+                <div class="left">
+                    <input class="dateInput" id="test-n3" type="text" disabled />
+                    <span>至</span>
+                    <input class="dateInput" id="test-n4" type="text" disabled />
+                    <input class="name" id="staffname" placeholder="请输入美容师姓名" type="text">
+                </div>
+                <div class="right">
+                    <span class="sure" onclick="querydata()">确定</span></div>
+            </div>
+        </div>
+        <div style="margin-top: 2.6rem"></div>
+
+        <div class="bot" id="alldata">
+            <p style="text-align: center;font-size: 17px">选择分析时间和类别和美容师姓名查看数据</p>
+
+            <!--    数据在这-->
+        </div>
+        <!-- 蒙层 -->
+        <div class="mask" id="box" style="display: none">
+            <ul id="shopidlist">
+                <li>花惠医学美容养生会馆（建设大街店）</li>
+                <li>花惠美容美体机构（博维店）</li>
+                <li>花惠美容美体机构（太阳城店）</li>
+                <li>花惠健康美学中心（世纪港湾）</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./js/reportData.js"></script>
+    <script src="./js/mask.js"></script>
+
+    <script>
+
+        // $(function () {
+        //     $("#period").change(function () {
+        //         if ($("#period").val() == "时间选择") {
+        //             $(".dateInput").removeAttr("disabled") 
+        //         } else {
+        //             $(".dateInput").attr("disabled",true) 
+        //         }
+        //     });
+        // });
+
+        //请求数据
+        function querydata() {
+            var starttime = $("#test-n3").val();
+            var endtime = $("#test-n4").val();
+            var fenxi = $("#fenxi").val();
+            var period = $("#period").val();
+            var staffname = $("#staffname").val();
+            var shopid = parseInt(getCookie("userid"));
+
+            Ajax.get(
+                {
+                    url: `m/beauticianttable`,
+                    data: {
+                        shopid: shopid,
+                        staffname: staffname,
+                        fenxi: fenxi,
+                        starttime: starttime,
+                        endtime: endtime,
+                        period: period
+                    }
+                },
+                res => {
+                    console.log(res);
+                    if (res.code == 0) {
+                        renderdata(res.data);
+                    } else {
+                        alert(res.msg);
+                    }
+                }
+            );
+        }
+
+        //渲染数据
+        function renderdata(res) {
+            $("#alldata").empty();
+            var i = res.length;
+            for (let j = 0; j < i; j++) {
+                var temp = res[j];
+
+                if (temp["name"] == "总计") {
+                    var li = $(`
+        <table border="0" cellpadding="0" cellspacing="0" class="formfot">
+            <tr>
+                <td class="custdata">总计</td>
+                <td class="projectname"></td>
+                <td class="custmoney" id="summoney">${temp["con"][0]["summoney"]}</td>
+                <td class="number" id="count">${temp["con"][0]["count"]}</td>
+                <td class="hand" id="sumhand">${temp["con"][0]["sumhand"]}</td>
+            </tr>
+        </table>`)
+
+                    $("#alldata").append(li);
+
+                } else {
+
+                    var name = temp["name"];
+                    var con = temp["con"];
+                    var conlen = con.length;
+
+
+                    var li = $(`<span>
+            <p class="name">${name}</p>
+            <table border="0" cellpadding="0" cellspacing="0" class="formhead">
+                <tr>
+                    <td class="custdata">日期</td>
+                    <td class="projectname">项目名称</td>
+                    <td class="custmoney">金额</td>
+                    <td class="number">数量</td>
+                    <td class="hand">手工</td>
+                </tr>
+            </table>
+
+        </span>`);
+                    var datas = $(`<table border="0" cellpadding="0" cellspacing="0" class="formain">
+
+            </table>`)
+                    for (let k = 0; k < conlen; k++) {
+                        var data = $(`      <tr>
+                    <td class="custdata">${con[k]["time"]}</td>
+                    <td class="projectname">${con[k]["projectname"]}</td>
+                    <td class="custmoney">${con[k]["summoney"]}</td>
+                    <td class="number">${con[k]["count"]}</td>
+                    <td class="hand">${con[k]["sumhand"]}</td>
+                </tr>`)
+                        datas.append(data);
+                    }
+                    li.append(datas)
+
+                    $("#alldata").append(li);
+                }
+
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>

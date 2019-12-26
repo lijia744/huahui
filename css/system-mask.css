@@ -1,0 +1,661 @@
+/* 添加商家 */
+.system #addshop {
+  display: none;
+}
+.system #addshop .main {
+  padding: 0.35rem 0 0.6rem 1.12rem;
+}
+.system #addshop .main input {
+  padding: 0.09rem 0.11rem;
+  width: 2.09rem;
+  margin-left: 0.26rem;
+}
+.system #addshop .main .shopname span {
+  padding-left: 0.17rem;
+}
+.system #addshop .main .shangchuan span {
+  padding: 0 0.32rem 0 0.3rem;
+}
+.system #addshop .main .desc {
+  padding-left: 0.34rem;
+  margin-bottom: 0.14rem;
+}
+.system #addshop .main .shangchuan {
+  display: flex;
+  margin-bottom: 0.14rem;
+}
+.system #addshop .main .shangchuan .clickup img {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid rgba(210, 212, 211, 1);
+}
+.system #addshop .main .shangchuan .clickup input {
+  margin-left: 0;
+  border: none;
+  outline: none;
+}
+.system #addshop .main .desc textarea {
+  width: 5.4rem;
+  margin-left: 0.3rem;
+  height: 1.22rem;
+  vertical-align: top;
+  border: 1px solid rgba(210, 212, 211, 1);
+}
+.system #addshop .main button {
+  padding: 0.14rem 0.45rem;
+  border: none;
+  color: #fff;
+  background-color: #06e39d;
+  margin: 1.7rem 0 0 4rem;
+}
+/* 添加品牌 */
+.system #pinpai {
+  display: none;
+}
+.system #pinpai .main {
+  padding: 0.35rem 0 0.6rem 1.12rem;
+}
+.system #pinpai .main input {
+  padding: 0.09rem 0.11rem;
+  width: 2.09rem;
+  margin-left: 0.23rem;
+}
+.system #pinpai .main .shopname span {
+  padding-left: 0.17rem;
+}
+.system #pinpai .main .shangchuan span {
+  padding: 0 0.27rem 0 0.34rem;
+}
+.system #pinpai .main .desc {
+  padding-left: 0.34rem;
+  margin-bottom: 0.14rem;
+}
+.system #pinpai .main .shangchuan {
+  display: flex;
+  margin-bottom: 1.7rem;
+}
+.system #pinpai .main .shangchuan .clickup {
+  width: 1rem;
+  height: 1rem;
+  /* border: 1px solid rgba(210, 212, 211, 1); */
+}
+.system #pinpai .main .shangchuan .clickup img {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid rgba(210, 212, 211, 1);
+}
+.system #pinpai .main .shangchuan .clickup input {
+  margin-left: 0;
+  border: none;
+  padding-left: 0;
+}
+.system #pinpai .main .desc textarea {
+  width: 5.4rem;
+  margin-left: 0.28rem;
+  height: 1.22rem;
+  vertical-align: top;
+  border: 1px solid rgba(210, 212, 211, 1);
+}
+.system #pinpai .main button {
+  padding: 0.14rem 0.45rem;
+  border: none;
+  color: #fff;
+  background-color: #06e39d;
+  margin: 0 0 0 4rem;
+}
+/* 添加管理员 */
+.system #leader {
+  display: none;
+}
+.system #leader .main {
+  text-align: center;
+}
+.system #leader .main .shopname span {
+  padding-left: 0.18rem;
+}
+.system #leader .main input {
+  margin-left: 0.23rem;
+}
+.system #leader .main button {
+  color: #fff;
+  padding: 0.14rem 0.43rem;
+  margin: 4rem 0 0.6rem 0;
+  border: none;
+  background-color: #06e39d;
+}
+/* 添加员工档案 */
+.system #dangan .box .write input {
+  color: #999;
+}
+.system #dangan {
+  display: none;
+}
+.system #dangan .title {
+  display: flex;
+  justify-content: space-between;
+}
+.system #dangan .box {
+  padding: 0.33rem 0.53rem 0 1.03rem;
+  top: 1.5rem;
+  left: 20%;
+}
+.system #dangan .box .title {
+  font-size: 0.18rem;
+  font-weight: bold;
+  padding-bottom: 0.13rem;
+  border-bottom: 1px solid #f5f7f6;
+}
+.system #dangan .box .title span:last-child {
+  font-size: 18px;
+  cursor: pointer;
+}
+.system #dangan .box .write {
+  margin-top: 0.37rem;
+}
+.system #dangan .box .write .oneline,
+.system #dangan .box .write .twoline {
+  display: flex;
+  justify-content: space-between;
+  /* padding-right: 1.41rem; */
+  align-items: center;
+  margin-bottom: 0.14rem;
+}
+.system #dangan .box .write .oneline .name input {
+  width: 1.29rem;
+  margin-bottom: 0;
+}
+.system #dangan .box .write .oneline .date #test-d4 {
+  border: 1px solid #d2d4d3;
+  border-radius: 0.03rem;
+  padding-right: 0.53rem;
+  padding-left: 0.3rem;
+}
+.system #dangan .box .write .oneline .sale select {
+  padding-left: 0.2rem;
+  width: 1.93rem;
+}
+.system #dangan .box .write .twoline .co {
+  border-radius: 0rem;
+}
+.system #dangan .box .write div span:first-child {
+  margin-right: 0.8rem;
+}
+.system #dangan .box .write .twoline .zhengzhi span,
+.system #dangan .box .write .twoline .body span {
+  margin-right: 0.4rem;
+}
+.system #dangan .box .write .twoline div .co,
+.system #dangan .box .write .fiveline input {
+  width: 1.93rem;
+}
+.system #dangan .box .write .twoline .minzu .co {
+  width: 1.55rem;
+}
+.system #dangan .box .write .threeline input,
+.system #dangan .box .write .fourline input {
+  width: 5rem;
+  color: #999;
+  margin-left: 0.05rem;
+}
+.system #dangan .box .write .fourline span:first-child {
+  margin-right: 0.65rem;
+}
+.system #dangan .box .write .fiveline {
+  display: flex;
+  margin-bottom: 0.45rem;
+}
+.system #dangan .box .write .fiveline .phone {
+  margin-right: 0.5rem;
+}
+.system #dangan .box .write .fiveline input {
+  margin-right: 1.28rem;
+}
+.system #dangan .box .write .family h4 {
+  margin: 0;
+  padding-bottom: 0.14rem;
+  border-bottom: 1px solid rgba(210, 212, 211, 1);
+}
+.system #dangan .box .write .family .text {
+  margin: 0.37rem 0 0.6rem 0;
+}
+.system #dangan .box .write .family .home .xinxi {
+  display: flex;
+  justify-content: space-between;
+}
+.system #dangan .box .write .family .home .xinxi .name input,
+.system #dangan .box .write .family .home .xinxi .guanxi input {
+  width: 1rem;
+}
+.system #dangan .box .write .family .home span {
+  margin-right: 0;
+}
+.system #dangan .box .write .family .home .xinxi .work input {
+  width: 2rem;
+}
+.system #dangan .box .write .family .home .sale .co {
+  width: 1.5rem;
+}
+.system #dangan .box .write .family .home .xinxi span {
+  margin-right: 0.2rem;
+}
+.system #dangan .box .write .family button {
+  color: #fff;
+  padding: 0.14rem 0.43rem;
+  border: none;
+  background-color: #06e39d;
+  margin: 0 0 0.3rem 45%;
+}
+/* 添加结算单 */
+.system .mask {
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  bottom: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* color: #eeeeee; */
+}
+.system .mask .box {
+  position: absolute;
+  left: 4.73rem;
+  top: 0.8rem;
+  width: 11.2rem;
+  background: rgba(255, 255, 255, 1);
+}
+.system .mask .box .top {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f5f7f6;
+  color: #000;
+  padding: 0.17rem 0.3rem;
+  font-size: 0.16rem;
+  font-weight: bold;
+  align-items: center;
+}
+.system .mask .box .top span:last-child {
+  cursor: pointer;
+  font-size: 18px;
+}
+.system .mask .box .search {
+  padding: 0.2rem;
+}
+.system .mask .box input {
+  width: 3.06rem;
+  padding: 0.13rem 0.16rem;
+  border: 1px solid rgba(210, 212, 211, 1);
+  font-size: 0.16em;
+  margin-bottom: 0.13rem;
+}
+.system .mask .box .search button {
+  /* width: 62px; */
+  background-color: #06e39d;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  margin-left: 0.09rem;
+  padding: 0.15rem 0.25rem;
+  font-size: 0.16rem;
+}
+.system .mask .box .search table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 0.12rem;
+}
+.system .mask .box .search td {
+  background-color: #eaeeec;
+  border: 1px solid #d2d4d3;
+  font-size: 0.16rem;
+  color: #000;
+  padding: 0.17rem 4px;
+  font-weight: bold;
+}
+/* 会员开单1 */
+.system #kaidan {
+  display: none;
+}
+.system #kaidan .infor,
+.system #kaidan-two .infor,
+.system #xinke .infor,
+.system #xinke .infor {
+  color: #000;
+  font-size: 0.16rem;
+}
+.system #kaidan .title,
+.system #kaidan-two .title,
+.system #xinke .title,
+.system #xinke .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.system #kaidan .infor .title .num,
+.system #kaidan .infor .title .name,
+.system #kaidan .infor .title .num .put,
+.system #kaidan-two .title .num,
+.system #kaidan-two .title .name,
+.system #kaidan-two .title .put,
+.system #xinke .title .num,
+.system #xinke .title .name,
+.system #xinke .title .put {
+  display: flex;
+  align-items: center;
+}
+.system #kaidan .title input,
+.system #kaidan-two .title input,
+.system #xinke .title input {
+  padding: 0;
+  margin: 0;
+}
+.system #kaidan .infor .title .name input,
+.system #kaidan-two .title .name input,
+.system #xinke .title .name input {
+  width: 0.96rem;
+  height: 0.35rem;
+}
+.system #kaidan .infor .title .put,
+.system #kaidan-two .title .put,
+.system #xinke .title .put {
+  position: relative;
+}
+.system #kaidan .infor .title .put input,
+.system #kaidan-two .title .put input,
+.system #xinke .title .put input {
+  width: 26px;
+  border-radius: 3px;
+  border: 1px solid #d2d4d3;
+  text-align: center;
+}
+.system .mask .box .search .cishu {
+  width: 1rem;
+}
+.system #kaidan .infor .title .num input,
+.system #kaidan-two .title .num input,
+.system #xinke .title .num input {
+  width: 0.76rem;
+  height: 0.37rem;
+}
+.system #kaidan .infor .title .num .put ul,
+.system #kaidan-two .title .num .put ul,
+.system #xinke .title .num .put ul {
+  position: absolute;
+  right: 0;
+  top: -0.16rem;
+}
+.system #kaidan .infor .title .num .put ul li,
+.system #kaidan-two .infor .title .num .put ul li,
+.system #xinke .infor .title .num .put ul li {
+  width: 9px;
+  height: 14px;
+  line-height: 14px;
+  background-color: #06e39d;
+  color: #fff;
+}
+.system #kaidan .infor .title .num .put ul li:first-child,
+.system #kaidan-two .infor .title .num .put ul li:first-child,
+.system #xinke .infor .title .num .put ul li:first-child {
+  margin-bottom: 1px;
+  border-top-right-radius: 3px;
+}
+.system #kaidan .put ul li:last-child,
+.system #kaidan-two .put ul li:last-child,
+.system #xinke .put ul li:last-child {
+  border-bottom-right-radius: 3px;
+}
+.system #kaidan .infor .title .room,
+.system #kaidan .infor .title .guwen,
+.system #kaidan .infor .title .date,
+.system #kaidan-two .infor .title .room,
+.system #kaidan-two .infor .title .guwen,
+.system #kaidan-two .infor .title .date,
+.system #xinke .infor .title .room,
+.system #xinke .infor .title .guwen,
+.system #xinke .infor .title .date {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+select {
+  cursor: pointer; /*鼠标上移变成小手*/
+}
+.system #kaidan .infor .title .room .co,
+.system #kaidan .infor .title .guwen .co,
+.system #kaidan .infor .title .date .co,
+.system #kaidan .infor table .list .jishi .co,
+.system #kaidan-two .infor .title .room .co,
+.system #kaidan-two .infor .title .guwen .co,
+.system #kaidan-two .infor .title .date .co,
+.system #xinke .infor .title .room .co,
+.system #xinke .infor .title .guwen .co,
+.system #xinke .infor .title .date .co,
+.system #xinke .infor table .list .jishi .co,
+.system #dangan .box .write .oneline .co,
+.system #dangan .box .write .oneline .dateInput,
+.system #kaidan .infor .title .date .dateInput,
+.system #kaidan-two .infor .title .date .dateInput,
+.system #xinke .infor .title .date .dateInput,
+.system #dangan .box .write .twoline .co,
+.system #dangan .box .write .family .home .sale .co {
+  padding: 0.1rem 3px;
+  width: 0.96rem;
+  font-size: 0.16rem;
+  color: #999;
+  /*去掉默认的下拉三角*/
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /*添加下拉三角图标*/
+  background: url("../images/bottom.png") no-repeat right center transparent;
+  border-radius: 0.03rem;
+  outline: none;
+  cursor: pointer;
+  border-color: rgba(210, 212, 211, 1);
+}
+.system #dangan .box .write .family .home .sale .co {
+  width: 1.93rem;
+}
+.system #dangan .box .write .twoline .co,
+.system #dangan .box .write .oneline .co {
+  border-radius: 0;
+}
+.system #kaidan .infor .title .date .dateInput,
+.system #kaidan-two .infor .title .date .dateInput,
+.system #xinke .infor .title .date .dateInput {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d2d4d3;
+  border-radius: 0.03rem;
+  padding: 0 0.4rem 0 0.03rem;
+  width: 0.96rem;
+  text-align: center;
+}
+.system .mask .box .search .chazhao {
+  width: 2.3rem;
+}
+.system #kaidan .infor table .list td,
+.system #kaidan-two .infor table .list td,
+.system #xinke .infor table .list td {
+  font-weight: normal;
+  background-color: #fff;
+  padding: 0.08rem 0.07rem;
+}
+.system #kaidan .infor table .list .chazhao,
+.system #xinke .infor table .list .chazhao {
+  text-align: left;
+  position: relative;
+}
+.system #kaidan .infor table .list .chazhao input,
+.system #xinke .infor table .list .chazhao input {
+  outline: none;
+  width: 1.93rem;
+  height: 0.38rem;
+  background-color: #eaeeec;
+  padding: 0 0.1rem;
+  margin: 0;
+  border-top-left-radius: 0.03rem;
+  border-bottom-left-radius: 0.03rem;
+}
+.system #kaidan .infor table .list .chazhao .iconfont,
+.system #xinke .infor table .list .chazhao .iconfont {
+  position: absolute;
+  left: 1.93rem;
+  padding: 0.09rem;
+  background-color: #9ea19f;
+  color: #fff;
+  border-bottom-right-radius: 0.03rem;
+  border-top-right-radius: 0.03rem;
+}
+.system #kaidan .infor table .list .cishu,
+.system #xinke .infor table .list .cishu {
+  display: flex;
+  position: relative;
+}
+.system #kaidan .infor table .list input,
+.system #xinke .infor table .list input {
+  height: 0.38rem;
+  border-radius: 0.03rem;
+}
+.system #kaidan .infor table .list .cishu input,
+.system #xinke .infor table .list .cishu input {
+  width: 0.96rem;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.system #kaidan .infor table .list .cishu ul,
+.system #xinke .infor table .list .cishu ul {
+  position: absolute;
+  top: -0.09rem;
+  left: 0.9rem;
+  padding: 0.02rem;
+}
+.system #kaidan .infor table .list .money ul,
+.system #xinke .infor table .list .money ul {
+  top: -0.08rem;
+  position: absolute;
+  left: 0.9rem;
+  padding: 0.02rem;
+}
+.system #kaidan .infor table .list .cishu ul li,
+.system #kaidan .infor table .list .money ul li,
+.system #xinke .infor table .list .cishu ul li,
+.system #xinke .infor table .list .money ul li {
+  background-color: #06e39d;
+  color: #fff;
+  height: 0.19rem;
+}
+.system #kaidan .infor table .list .cishu ul li:first-child,
+.system #kaidan .infor table .list .money ul li:first-child,
+.system #xinke .infor table .list .cishu ul li:first-child {
+  margin-bottom: 1px;
+}
+.system #kaidan .infor table .list .money,
+.system #xinke .infor table .list .money {
+  /* display: flex; */
+  position: relative;
+  text-align: left;
+}
+.system #kaidan .infor table .list .money input,
+.system #xinke .infor table .list .money input {
+  width: 0.96rem;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.system #kaidan .infor table .money,
+.system #xinke .infor table .money {
+  width: 1rem;
+}
+.system #kaidan .infor table .jishi,
+.system #xinke .infor table .jishi {
+  width: 2.07rem;
+}
+.system #kaidan .infor table .list .jishi .co,
+.system #xinke .infor table .list .jishi .co {
+  width: 1.87rem;
+  /* text-align: center;text-align-last:center */
+}
+.system #kaidan .infor table .list button,
+.system #xinke .infor table .list button {
+  padding: 0.05rem 0.03rem;
+}
+.system #kaidan .bot,
+.system #xinke .bot {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.11rem 0.2rem;
+  font-weight: bold;
+  background-color: #f5f7f6;
+  align-items: center;
+}
+.system #kaidan .bot .left span,
+.system #xinke .bot .left span {
+  color: #000;
+}
+.system #kaidan .bot .left .price,
+.system #xinke .bot .left .price {
+  color: #06e39d;
+  font-size: 0.2rem;
+}
+.system #kaidan .bot .right button,
+.system #xinke .bot .right button {
+  color: #fff;
+  padding: 0.11rem 0.2rem;
+  background-color: #e30610;
+  border: none;
+}
+.system #kaidan .bot .right #save,
+.system #xinke .bot .right #save {
+  background-color: #06e39d;
+  margin-left: 0.12rem;
+}
+/* 会员开单2 */
+.system #kaidan-two {
+  display: none;
+}
+.system #kaidan-two .infor table {
+  margin-top: 0.12rem;
+}
+.system #kaidan-two .infor table .list td {
+  padding: 0.17rem 0.07rem;
+}
+.system #kaidan-two .infor table .list .zengsong span {
+  color: #06e39d;
+}
+.system #kaidan-two .infor table .list .choose button {
+  font-size: 0.14rem;
+  color: #fff;
+  background-color: #06e39d;
+  padding: 0.06rem 0.1rem;
+  border-radius: 0.03rem;
+}
+.system #kaidan-two .infor table {
+  margin-bottom: 0.73rem;
+}
+/* 新客开单 */
+.system #xinke {
+  display: none;
+}
+.system #xinke .infor table .list .cishu input,
+.system #xinke .infor table .list .money input {
+  width: 0.95rem;
+}
+/* 到店次数图表 */
+.system #daodian {
+  display: none;
+}
+.system #daodian .dateInput {
+  border: 1px solid #d2d4d3;
+  padding: 0.15rem 0.21rem;
+}
+.system #daodian #main {
+  margin: 0 auto;
+  width: 5.22rem;
+  height: 5.22rem;
+}
+.system #daodian .search {
+  padding-bottom: 0;
+}

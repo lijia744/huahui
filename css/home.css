@@ -1,0 +1,141 @@
+.home {
+  width: 7.5rem;
+  position: relative;
+  font-size: 0.16rem;
+}
+
+/* 顶部部分 */
+.home .user {
+  background-image: url("../images/home\ \(1\).jpg");
+  background-size: cover;
+
+}
+.home .user header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.3rem;
+  padding: 0.25rem 0.12rem 0.32rem;
+  color: #fff;
+}
+.workJournalHeader .headerLeft {
+  margin-right: 0.32rem;
+}
+.workJournalHeader .herderRight {
+  display: flex;
+  font-size: 0.6rem;
+}
+.home .user .bot {
+  padding: 0 0.3rem 1.4rem 0.3rem;
+  display: flex;
+  justify-content: flex-start;
+}
+.home .user .touxiang {
+  height: 1.83rem;
+  border-radius: 50%;
+  margin-right: 0.28rem;
+}
+.home .user .information {
+  color: #fff;
+  font-size: 0.14rem;
+  margin-top: 0.2rem;
+  width: 3.4rem;
+}
+.home .user .information p {
+  font-size: 0.36rem;
+}
+.home .user .information span {
+  font-size: 0.2rem;
+}
+.home .user .information .position {
+  margin-top: 10px;
+  display: flex;
+}
+.home .user .information .position img {
+  width: 0.17rem;
+  height: 0.22rem;
+  margin-right: 4px;
+}
+.home .user .information .position span {
+  color: #e3cc06;
+  font-size: 0.2rem;
+}
+.home .user .change {
+  width: 1.34rem;
+  height: 0.5rem;
+  text-align: center;
+  font-size: 0.22rem;
+  background-color: #e3cc06;
+  margin-top: 0.1rem;
+  border-radius: 2rem 2rem 2rem 2rem;
+  border: none;
+  outline: none;
+}
+.home .yingye {
+  width: 100%;
+  padding:0.87rem 0.3rem 0rem 0.3rem;
+  border: 1px solid #fff;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  position: absolute;
+  top: 3rem;
+  background-color: #fff;
+  margin-top: 0.4rem;
+}
+.home .yingye .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.78rem;
+}
+.home .yingye #main {
+  width: 6.06rem;
+  height: 4.85rem;
+  margin-left: 0.1rem;
+}
+.home .yingye .title .today {
+  font-size: 0.36rem;
+}
+.home .yingye .title .more {
+  outline: none;
+  font-size: 0.24rem;
+  text-decoration: none;
+ border: none;
+ padding: 0.05rem;
+ background-color: #fff;
+}
+.home .yingye .main .top,.home .yingye .main .bot{
+  display: flex;
+  justify-content: space-between;
+}
+.home .yingye .main .top div,.home .yingye .main .bot div{
+  width:2.23rem;
+height:2.35rem;
+  background:rgba(255,255,255,1);
+border:1px solid rgba(230, 241, 237, 1);
+border-radius:0.2rem;
+text-align: center;
+padding-top: 0.5rem;
+
+}
+.home .yingye .main .top div span,.home .yingye .main .bot div span{
+  font-size: 0.4rem;
+  color: #0EE3A0;
+}
+.home .yingye .main .top div h4,.home .yingye .main .bot div h4{
+  font-size: 0.26rem;
+  margin-top: 0.24rem;
+}
+.home .yingye .main .top{
+  margin-bottom: 0.1rem;
+}
+.home .yingye .examine{
+  margin-top: 0.7rem;
+  text-align: center;
+}
+.home .yingye .examine a {
+  background-color: #0EE3A0;
+  border: none;
+  padding: 0.2rem;
+  color: #fff;
+  border-radius: 0.1rem;
+}

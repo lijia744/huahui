@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>账单审核</title>
+    <script src="./js/publicSize.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="js/pageinit.js"></script>
+
+    <link rel="stylesheet" href="./css/public.css" />
+    <link rel="stylesheet" href="./css/billaudit.css">
+    <script src="./laydate/laydate.js"></script>
+    <script src="./js/billaudit.js"></script>
+    <link rel="stylesheet" href="./css/mask.css" />
+</head>
+
+<body>
+    <div class="billaudit">
+        <header>
+            <div class="left">
+                <p id="username">花惠の小铺</p>
+                <span id="userid">ID:10201351</span>
+            </div>
+
+        </header>
+        <div class="container">
+            <div style="text-align: center;font-size: 0.36rem;">账单审核</div>
+<!--            <div class="title">-->
+<!--                账单审核-->
+<!--            </div>-->
+
+
+<!--            <div class="search">-->
+<!--                <div class="left">-->
+<!--                    <input type="text" class="dateInput" id="test-n3" />-->
+<!--                    <span>至</span>-->
+<!--                    <input type="text" class="dateInput" id="test-n4" />-->
+<!--                </div>-->
+<!--                <div class="right">-->
+<!--                    <span class="sure" onclick="querydata()">确定</span></div>-->
+<!--            </div>-->
+
+        </div>
+        <div class="bot">
+            <table border="0" cellpadding="0" cellspacing="0" class="form-head">
+                <tr>
+                    <td style='width:1.2rem'>顾客名</td>
+                    <td style='width:2.1rem'>项目名称</td>
+                    <td style='width:1.3rem'>金额</td>
+                    <td style='width:1.3rem'>消费方式</td>
+                    <td style='width:1.5rem'>美容师</td>
+                </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" class="form-main" id="unexaminelist">
+<!--                <tr id="line">-->
+<!--                    <td style='width:1.2rem'>王一一</td>-->
+<!--                    <td style='width:2.1rem'>身体养护</td>-->
+<!--                    <td style='width:1.3rem'>4000.00</td>-->
+<!--                    <td style='width:1.3rem'>1</td>-->
+<!--                    <td style='width:1.5rem'>张一一</td>-->
+<!--                </tr>-->
+            </table>
+
+            <div style="height: 30px;"></div>
+        </div>
+        <div class="detail">
+            <ul id="shopidlist">
+                <li class="click">
+                    <span>详情</span>
+                    <span id="close">X</span>
+                </li>
+                <li>
+                    <span class="item">日期</span>
+                    <span class="content" id="time">2019-10-10</span>
+                </li>
+                <li>
+                    <span class="item">顾客名</span>
+                    <span class="content" id="customer">王一一</span>
+                </li>
+                <li>
+                    <span class="item">分类</span>
+                    <span class="content" id="classify">分类名称</span>
+                </li>
+                <li>
+                    <span class="item">项目名</span>
+                    <span class="content" id="projectname">项目名称</span>
+                </li>
+                <li>
+                    <span class="item">品牌</span>
+                    <span class="content" id="brandname">品牌名称</span>
+                </li>
+                <li>
+                    <span class="item">数量</span>
+                    <span class="content" id="times">1</span>
+                </li>
+                <li>
+                    <span class="item">手工</span>
+                    <span class="content"  id="hand">10.00</span>
+                </li>
+                <li>
+                    <span class="item">金额</span>
+                    <span class="content"  id="money">10.00</span>
+                </li>
+                <li>
+                    <span class="item">消费类别</span>
+                    <span class="content"  id="consumptioncategory">消费类别</span>
+                </li>
+                <li>
+                    <span class="item">消费方式</span>
+                    <span class="content" id="consumptionpattern">消费类别</span>
+                </li>
+                <li>
+                    <span class="item">指/非/新</span>
+                    <span class="content" id="allocate">消费类别</span>
+                </li>
+                <li>
+                    <span class="item">美容师</span>
+                    <span class="content" id="beautician">消费类别</span>
+                </li>
+                <li>
+                    <span class="item">卡项类别</span>
+                    <span class="content" id="cardcategory">消费类别</span>
+                </li>
+                <li>
+                    <span class="item">顾问</span>
+                    <span class="content" id="sonsultant">消费类别</span>
+                </li>
+                <li>
+                    <span class="item">审核人</span>
+                    <span class="content" id="checker">消费类别</span>
+                </li>
+                <div class="btn">
+                    <button id="examinepass">审核通过</button>
+                    <button id="examineunpass">审核未通过</button>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <script src="./js/reportData.js"></script>
+    <script src="./js/mask.js"></script>
+    <script>
+        $(document).on("click", "#line", function(e) {
+    $(".detail").css("display", "block");
+  });
+  $(document).on("click", "#close", function(e) {
+    $(".detail").css("display", "none");
+  });
+
+    </script>
+</body>
+
+</html>

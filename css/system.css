@@ -1,0 +1,707 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0.16rem;
+}
+
+h3 {
+    font-weight: 400;
+    line-height: 23px;
+    padding: 0 0 15px 60px;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+
+.system {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.system header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #06e39d;
+    padding: 0.18rem 0.59rem;
+    font-size: 0.24rem;
+    color: #fff;
+}
+
+.system header .iconfont {
+    padding-right: 0.09rem;
+}
+
+.system header .right .return {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.container .menu span {
+    font-size: 20px;
+    margin-right: 7px;
+    line-height: 23px;
+}
+
+.container .menu {
+    width: 3.11rem;
+}
+
+.container .menu h3 {
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #f5f7f6;
+    margin-bottom: 0;
+}
+
+.container .menu ul {
+    display: none;
+    background-color: #f5f7f6;
+    margin: 0;
+}
+
+.container .menu ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    display: block;
+    height: 26px;
+}
+
+.container .menu .selected {
+    color: #06e39d;
+}
+
+.container .menu ul li a {
+    padding-left: 50px;
+}
+
+.container .content {
+    background-color: #f5f7f6;
+    padding: 40px 0 0 41px;
+    flex-grow: 1;
+}
+
+.container .content .get-menu a {
+    display: inline-block;
+    font-size: 15px;
+    height: 40px;
+}
+
+.container .content .get-menu span {
+    width: 5px;
+    height: 19px;
+    color: #06e39d;
+    margin-right: 3px;
+}
+
+.container .content .get-menu .jiantou {
+    color: #000;
+}
+
+.container .content .menu1 .tab {
+    display: none;
+}
+
+.container .content .menu1 .active {
+    display: block;
+}
+
+.container .content .menu1 .tab .tt {
+    margin-top: 0.32rem;
+    width: 13.5rem;
+    height: 5.08rem;
+    background-color: #fff;
+    padding: 0.95rem 0 0 1.06rem;
+}
+
+.container .content .menu1 .tab .tt .password {
+    margin: 0 0 0.14rem 0.32rem;
+}
+
+.container .content .menu1 .tab .tt span {
+    padding-right: 0.23rem;
+}
+
+.container .content .menu1 .tab .tt input {
+    padding: 0.11rem 0.09rem;
+}
+
+.container .content .menu1 .tab .tt button {
+    color: #fff;
+    padding: 0.14rem 0.43rem;
+    margin: 0.33rem 0 0 1.1rem;
+    border: none;
+    background-color: #06e39d;
+}
+
+/*第二个菜单下的文档内容*/
+.container .content .menu2 .tab {
+    display: none;
+}
+
+.container .content .menu2 .active {
+    display: block;
+}
+
+/* 商家管理 */
+.container .content .menu2 #tab-1 .title {
+    width: 14.67rem;
+    background-color: #fff;
+    padding: 0.09rem 0rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .content .menu2 #tab-1 .title input {
+    height: 0.46rem;
+    margin: 0 0.28rem 0 0.15rem;
+}
+
+.container .content .menu2 #tab-1 .title button {
+    background-color: #06e39d;
+    border-radius: 3px;
+    color: #fff;
+    padding: 0.16rem;
+    border: none;
+    margin-right: 0.22rem;
+}
+
+.container .content .menu2 #tab-1 .list {
+    width: 14.67rem;
+    height: 5.91rem;
+    background-color: #fff;
+    margin-top: 0.29rem;
+    font-size: 0.14rem;
+    color: #383a39;
+}
+
+.container .content .menu2 #tab-1 .list .top {
+    background-color: #d1f5ea;
+    padding: 0.13rem 0;
+}
+
+.container .content .menu2 #tab-1 .list .top .shop {
+    padding: 0 1.75rem 0 0.5rem;
+}
+
+.container .content .menu2 #tab-1 .list .top .pic {
+    padding: 0 6.85rem 0 3.12rem;
+}
+
+.container .content .menu2 #tab-1 .list ul {
+    /* padding-top:
+    0.17rem ; */
+    padding: 0;
+    margin: 0;
+}
+
+.container .content .menu2 #tab-1 .list ul li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d3d5d4;
+    padding: 0.17rem 0 0.17rem 0.32rem;
+}
+
+.container .content .menu2 #tab-1 .list ul li img {
+    width: 0.84rem;
+    padding: 0 6.2rem 0 0.3rem;
+}
+
+.container .content .menu2 #tab-1 .list ul li p {
+    margin-right: 1.61rem;
+}
+
+.container .content .menu2 #tab-1 .list ul li span {
+    width: 3rem;
+}
+
+.container .content .menu2 #tab-1 .list ul li button {
+    padding: 0.05rem 0.1rem;
+    background-color: #06e39d;
+    border-radius: 3px;
+    color: #fff;
+    border: none;
+}
+
+.container .content .menu2 #tab-1 .list ul li .del {
+    margin-left: 0.04rem;
+    background-color: #e30610;
+}
+
+/* 品牌管理 */
+.container .content .menu2 #tab-2 .title {
+    width: 14.67rem;
+    background-color: #fff;
+    padding: 0.09rem 0rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .content .menu2 #tab-2 .title input {
+    height: 0.46rem;
+    margin: 0 0.28rem 0 0.15rem;
+}
+
+.container .content .menu2 #tab-2 .title button {
+    background-color: #06e39d;
+    border-radius: 3px;
+    color: #fff;
+    padding: 0.16rem;
+    border: none;
+    margin-right: 0.22rem;
+}
+
+.container .content .menu2 #tab-2 .list {
+    width: 14.67rem;
+    height: 5.91rem;
+    background-color: #fff;
+    margin-top: 0.29rem;
+    font-size: 0.14rem;
+    color: #383a39;
+}
+
+.container .content .menu2 #tab-2 .list .top {
+    background-color: #d1f5ea;
+    padding: 0.13rem 0;
+}
+
+.container .content .menu2 #tab-2 .list .top .shop {
+    padding: 0 1.75rem 0 0.5rem;
+}
+
+.container .content .menu2 #tab-2 .list .top .pic {
+    padding: 0 6.85rem 0 3.12rem;
+}
+
+.container .content .menu2 #tab-2 .list ul {
+    /* padding-top:
+    0.17rem ; */
+    padding: 0;
+    margin: 0;
+}
+
+.container .content .menu2 #tab-2 .list ul li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d3d5d4;
+    padding: 0.17rem 0 0.17rem 0.32rem;
+}
+
+.container .content .menu2 #tab-2 .list ul li img {
+    width: 0.84rem;
+    padding: 0 6.2rem 0 0.3rem;
+}
+
+.container .content .menu2 #tab-2 .list ul li p {
+    margin-right: 1.61rem;
+}
+
+.container .content .menu2 #tab-2 .list ul li span {
+    width: 3rem;
+}
+
+.container .content .menu2 #tab-2 .list ul li button {
+    padding: 0.05rem 0.1rem;
+    background-color: #06e39d;
+    border-radius: 3px;
+    color: #fff;
+    border: none;
+}
+
+.container .content .menu2 #tab-2 .list ul li .del {
+    margin-left: 0.04rem;
+    background-color: #e30610;
+}
+
+/* 店铺管理/管理员管理 */
+.container .content .menu2 #tab-3 .title,
+.container .content .menu2 #tab-4 .title {
+    width: 14.67rem;
+    background-color: #fff;
+    padding: 0.09rem 0rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .content .menu2 #tab-3 .title input,
+.container .content .menu2 #tab-4 .title input {
+    height: 0.46rem;
+    margin: 0 0.28rem 0 0.15rem;
+}
+
+.container .content .menu2 #tab-3 .title button,
+.container .content .menu2 #tab-4 .title button {
+    background-color: #06e39d;
+    border-radius: 3px;
+    color: #fff;
+    padding: 0.16rem;
+    border: none;
+    margin-right: 0.22rem;
+}
+
+.container .content .menu2 #tab-3 .list,
+.container .content .menu2 #tab-4 .list {
+    width: 14.67rem;
+    height: 5.91rem;
+    background-color: #fff;
+    margin-top: 0.29rem;
+    font-size: 0.14rem;
+    color: #383a39;
+}
+
+.container .content .menu2 #tab-3 .list .top,
+.container .content .menu2 #tab-4 .list .top {
+    background-color: #d1f5ea;
+    padding: 0.13rem 0;
+}
+
+.container .content .menu2 #tab-3 .list .top .shop,
+.container .content .menu2 #tab-4 .list .top .shop {
+    padding: 0 1.91rem 0 0.5rem;
+}
+
+.container .content .menu2 #tab-3 .list .top .id,
+.container .content .menu2 #tab-4 .list .top .id {
+    padding: 0 10rem 0 0;
+}
+
+.container .content .menu2 #tab-3 .list ul,
+.container .content .menu2 #tab-4 .list ul {
+    padding: 0;
+    margin: 0;
+}
+
+.container .content .menu2 #tab-3 .list ul li,
+.container .content .menu2 #tab-4 .list ul li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d3d5d4;
+    padding: 0.17rem 0 0.17rem 0rem;
+    text-align: center;
+}
+
+.container .content .menu2 #tab-3 .list ul li p,
+.container .content .menu2 #tab-4 .list ul li p {
+    margin:0 1.61rem 0 0.32rem;
+    width: 0.8rem;
+}
+
+.container .content .menu2 #tab-3 .list ul li span,
+.container .content .menu2 #tab-4 .list ul li span {
+    width: 0.7rem;
+    margin-right:9.7rem;
+}
+
+.container .content .menu2 #tab-3 .list ul li button,
+.container .content .menu2 #tab-4 .list ul li button {
+    padding: 0.05rem 0.1rem;
+    background-color: #06e39d;
+    border-radius: 3px;
+    color: #fff;
+    border: none;
+}
+
+.container .content .menu2 #tab-3 .list ul li .del,
+.container .content .menu2 #tab-4 .list ul li .del {
+    margin-left: 0.04rem;
+    background-color: #e30610;
+}
+/*第三个菜单下的文档内容*/
+.container .content .menu3 .tab {
+    display: none;
+}
+
+.container .content .menu3 .active {
+    display: block;
+}
+
+.container .content .menu3 .tab p {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    word-break: break-all;
+}
+
+.container .content .menu3 .tab .tt {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* 第四个 */
+.container .content .menu4 .tab {
+    display: none;
+}
+
+.container .content .menu4 .active {
+    display: block;
+}
+
+.container .content .menu4 .tab p {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    word-break: break-all;
+}
+
+.container .content .menu4 .tab .information .form .shouqi,
+.container .content .menu4 .tab .information .list .shouqi {
+    display: none;
+}
+
+.container .content .menu4 .tab .information .form ul,
+.container .content .menu4 .tab .information .list ul {
+    width: 14.67rem;
+    display: flex;
+    background-color: #d1f5ea;
+    justify-content: space-between;
+    padding: 13px 0 13px 4px;
+    color: #383a39;
+    font-size: 14px;
+    margin: 0;
+}
+
+.container .content .menu4 .tab .information .list ul {
+    background-color: #f2fdfa;
+}
+
+.container .content .menu4 .tab .information ul li {
+    text-align: center;
+    line-height: 25px;
+}
+
+.container .content .menu4 .tab .information .list button {
+    width: 49px;
+    height: 25px;
+    color: #fff;
+    border-radius: 3px;
+    background-color: #06e39d;
+    border: none;
+}
+
+.container .content .menu4 .tab .information .xiangqing table {
+    width: 14.67rem;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.container .content .menu4 .tab .information .xiangqing table tr {
+    background-color: #e2e5e4;
+}
+
+.container .content .menu4 .tab .information .xiangqing table tr:nth-child(2) {
+    background-color: #fff;
+}
+
+.container .content .menu4 .tab .information .xiangqing table td {
+    border: 1px solid #f5f7f6;
+    font-size: 14px;
+    text-align: center;
+    padding: 3px;
+}
+
+.container .content .menu4 .tab .information .list .del {
+    background-color: #e30610;
+    margin: 0 4px;
+}
+
+.container .content .menu4 .tab .information .shop {
+    width: 75px;
+}
+
+.container .content .menu4 .tab .information .month {
+    width: 31px;
+}
+
+.container .content .menu4 .tab .information .date {
+    width: 70px;
+    padding: 0;
+}
+
+.container .content .menu4 .tab .information .name {
+    width: 56px;
+}
+
+.container .content .menu4 .tab .information .huoyuedu,
+.container .content .menu4 .tab .information .zubie {
+    width: 42px;
+}
+
+.container .content .menu4 .tab .information .keliu {
+    width: 30px;
+}
+
+.container .content .menu4 .tab .information .meirongshi {
+    width: 70px;
+}
+
+.container .content .menu4 .tab .information .room {
+    width: 60px;
+}
+
+.container .content .menu4 .tab .information .btn {
+    width: 106px;
+}
+
+/* 第五个 */
+.container .content .menu5 .tab {
+    display: none;
+}
+
+.container .content .menu5 .active {
+    display: block;
+}
+
+.container .content .menu5 .tab p {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    word-break: break-all;
+}
+
+.container .content .menu5 .title,
+.container .content .menu4 .title,
+.container .content .menu6 .title {
+    margin: 0px 0 0.47rem 0;
+    width: 14.67rem;
+    background-color: #fff;
+    padding: 0.12rem 0.24rem;
+    box-shadow: 0px 0px 3px 0px rgba(206, 207, 207, 0.07);
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .content .menu5 .title span,
+.container .content .menu4 .title span,
+.container .content .menu6 .title span {
+    width: 144px;
+    height: 42px;
+    font-size: 0.16rem;
+    padding: 10px 10px;
+    border: 1px solid rgba(202, 218, 213, 1);
+}
+
+.container .content .menu4 .title #test-n9 {
+    margin-left: 16px;
+}
+
+.container .content .menu5 .title .zhi,
+.container .content .menu4 .title .zhi,
+.container .content .menu6 .title .zhi {
+    border: none;
+}
+
+.container .content .menu5 .title button,
+.container .content .menu4 .title button,
+.container .content .menu6 .title button {
+    background: #06e39d;
+    border-radius: 3px;
+    color: #fff;
+    border: none;
+    margin-left: 0.28rem;
+    padding: 0.16rem;
+}
+
+.container .content .menu4 .title .add {
+    padding: 0.12rem 0.23rem;
+}
+
+.container .content .menu4 .title .right .add:first-child {
+    margin: 0;
+}
+
+.container .content .menu4 .title .right .add:last-child {
+    margin: 0 24px 0 16px;
+}
+
+.container .content .menu5 .information .form {
+    width: 14.67rem;
+    display: flex;
+    background-color: #d1f5ea;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.12rem;
+    margin: 0;
+    font-size: 0.14rem;
+}
+
+.container .content .menu5 .information .list .form {
+    width: 14.67rem;
+    padding: 0.12rem;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(202, 218, 213, 1);
+}
+
+.container .content .menu5 .information .list .form .btn.del {
+    background-color: #06e39d;
+    width: 49px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 3px;
+    text-align: center;
+    color: #fff;
+}
+
+.container .content .menu5 .information ul li {
+    text-align: center;
+}
+
+.container .content .menu5 .information .form .name {
+    width: 0.53rem;
+}
+
+.container .content .menu5 .information .form .sex,
+.container .content .menu5 .information .form .minzu {
+    width: 0.38rem;
+}
+
+.container .content .menu5 .information .form .month {
+    width: 0.85rem;
+}
+
+.container .content .menu5 .information .form .zhengzhi,
+.container .content .menu5 .information .form .shenti {
+    width: 0.66rem;
+}
+
+.container .content .menu5 .information .form .jiguan {
+    width: 0.65rem;
+}
+
+.container .content .menu5 .information .form .add {
+    width: 0.52rem;
+}
+
+.container .content .menu5 .information .form .tel {
+    width: 1rem;
+}
+
+.container .content .menu5 .information .form .btn {
+    width: 50px;
+}
+
+/* 第六个 */
+.container .content .menu6 .tab {
+    display: none;
+}
+
+.container .content .menu6 .active {
+    display: block;
+}

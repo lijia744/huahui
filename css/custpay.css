@@ -1,0 +1,138 @@
+.custpay {
+    font-size: 0.14rem;
+    position: relative;
+  }
+  .custpay header {
+    background-image: url("../images/home\ \(1\).jpg");
+    background-size: cover;
+    color: #fff;
+    font-size: 0.26rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.54rem 0.3rem 0.8rem 0.3rem;
+  }
+  .custpay header p {
+    font-size: 0.36rem;
+  }
+  .custpay header .change {
+    width: 1.34rem;
+    height: 0.5rem;
+    text-align: center;
+    font-size: 0.22rem;
+    background-color: #e3cc06;
+    margin-top: 0.1rem;
+    border-radius: 2rem 2rem 2rem 2rem;
+    border: none;
+    outline: none;
+    color: #1b1b1a;
+  }
+  .custpay .container {
+    width: 100%;
+    padding: 0.87rem 0.3rem 0rem 0.3rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    position: absolute;
+    top: 1.8rem;
+    background-color: #fff;
+  }
+  .custpay .container .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.24rem;
+  }
+  .custpay .container .title .form {
+    font-size: 0.36rem;
+    border: none;
+  background-color: #fff;
+  outline: none;
+  }
+  .custpay .container .title .report,.custpay .container .title .pay {
+    font-size: 0.27rem;
+    background-color: #e6eaea;
+    border-radius: 0.31rem;
+    border: none;
+    padding: 0.15rem 0.26rem;
+    outline: none;
+  }
+  .custpay .container .search input {
+    width: 1.6rem;
+    border: 1px solid rgba(109, 113, 113, 0.2);
+    color: #86938f;
+    border-radius: 0.3rem;
+    text-align: center;
+    padding: 0.14rem 0.06rem;
+    font-size: 0.2rem;
+    outline: none;
+  }
+  /* .custpay .container .search span{
+    padding: 0 0.1rem;
+  } */
+  .custpay .container .search .name{
+    width: 2.1rem;
+  }
+  .custpay .container .search .sure{
+    color: #0EE3A0;
+  }
+  .custpay .container .search{
+    display: flex;
+    align-items: center;
+  }
+  .custpay .container .search .right{
+    width: 0.7rem;
+  }
+  .custpay .container .search .left{
+    flex-grow: 1;
+  }
+  .custpay .bot .infor{
+      display: flex;
+      padding: 0.5rem 0 0.5rem 0.3rem;
+    align-items: center;
+    font-size: 0.28rem;
+    color: #333634;
+  }
+  .custpay .bot{
+      border-top: 1px solid #e2e3e3;
+      margin-top: 2.6rem;
+      width: 100%;
+  }
+  .custpay .bot .name{
+    font-size: 0.36rem;
+    margin-right: 0.43rem;
+}
+.custpay .bot .distance{
+    font-size: 0.2rem;
+    color: #989E9C;
+    margin-left: 2rem;
+}
+.custpay .bot .distance .day{
+    font-size: 0.36rem;
+    color: #0EE3A0;
+    padding: 0 0.1rem;
+}
+  .custpay .bot table{
+    width: 100%;
+    text-align: center;
+    color: #353838;
+}
+  .custpay .bot .formhead{
+      background-color: #EDFBF7;
+  }
+  .custpay .bot .formfot{
+      background-color: #06e39d;
+      color: #fff;
+  }
+  .custpay .bot table td{
+    padding: 0.17rem 0;
+    width:1.3rem;
+    border-bottom: 1px solid #e2e3e3;
+    border-right: 1px solid #e2e3e3;
+  }
+  .custpay .bot table .custdata{
+      width: 1.44rem;
+  }
+  .custpay .bot table .projectname{
+      width: 2.1rem;
+  }
+  .custpay .bot table .hand{
+      border-right: none;
+  }

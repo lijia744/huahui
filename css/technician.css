@@ -1,0 +1,282 @@
+.technician {
+    font-size: 0.14rem;
+    position: relative;
+  }
+  .technician header {
+    background-image: url("../images/home\ \(1\).jpg");
+    background-size: cover;
+    color: #fff;
+    font-size: 0.26rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.54rem 0.3rem 0.8rem 0.3rem;
+  }
+  .technician header p {
+    font-size: 0.36rem;
+  }
+  .technician header .change {
+    width: 1.34rem;
+    height: 0.5rem;
+    text-align: center;
+    font-size: 0.22rem;
+    background-color: #e3cc06;
+    margin-top: 0.1rem;
+    border-radius: 2rem 2rem 2rem 2rem;
+    border: none;
+    outline: none;
+    color: #1b1b1a;
+  }
+  .technician .container {
+    width: 100%;
+    padding: 0.87rem 0.3rem 0rem 0.3rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    position: absolute;
+    top: 1.8rem;
+    background-color: #fff;
+  }
+  .technician .container .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.24rem;
+  }
+  .technician .container .title .form {
+    font-size: 0.36rem;
+    border: none;
+  background-color: #fff;
+  outline: none;
+  }
+  .technician .container .title .report {
+    font-size: 0.27rem;
+    background-color: #e6eaea;
+    border-radius: 0.31rem;
+    border: none;
+    padding: 0.15rem 0.26rem;
+    outline: none;
+  }
+  .technician .container .search{
+      display: flex;
+      align-items: center;
+  }
+  .technician .container .search .right{
+      width: 0.7rem;
+  }
+  .technician .container .search .left{
+      flex-grow: 1;
+  }
+  .technician .container .search input {
+    width: 1.6rem;
+    border: 1px solid rgba(109, 113, 113, 0.2);
+    color: #86938f;
+    border-radius: 0.3rem;
+    text-align: center;
+    padding: 0.14rem 0.06rem;
+    font-size: 0.2rem;
+    outline: none;
+  }
+  /* .technician .container .search span{
+    padding: 0 0.1rem;
+  } */
+  .technician .container .search .name{
+    width: 2.1rem;
+  }
+  .technician .container .search .sure{
+    color: #0EE3A0;
+    
+  }
+  .technician .details table {
+    border-spacing: 1px;
+  }
+  .technician .details{
+    margin-top: 2.46rem;
+  }
+   .technician .details table .biaotou.one {
+    border-collapse: collapse;
+    width: 14.67rem;
+    text-align: center;
+    background-color: #d1f5ea;
+  }
+  .technician .details .title{
+      width: 100%;
+  }
+   .technician .details table .biaotou .tablehead {
+    padding: 0.3rem 0;
+    width: 1.62rem;
+  }
+  .technician .details .keliu .biaotou .tablehead{
+      width: 3.38rem;
+  } 
+   .technician .details table .biaotou .month {
+    padding: 0.14rem 0;
+    width: 1.91rem;
+  }
+  
+   .technician .details table .biaotou .tablebot th {
+    padding: 0.14rem 0;
+    width: 0.96rem;
+    font-weight: normal;
+  }
+  
+   .technician .details table .biaotou .tablebot #num {
+    width: 0.98rem;
+  }
+  
+   .technician .details .xiangqing {
+    font-size: 0.14rem;
+  }
+  
+   .technician .details .xiangqing .shicao {
+    text-align: center;
+    color: #575b5b;
+  }
+  
+   .technician .details .xiangqing .shicao th {
+    padding: 0.66rem 0rem;
+    width: 1.62rem;
+    font-weight: normal;
+    background-color: #f6fffc;
+  }
+  
+   .technician .details .xiangqing {
+    border-collapse: collapse;
+  }
+  
+   .technician .details .xiangqing .shicao td {
+    border-bottom: 1px solid rgba(202, 218, 213, 1);
+    border-left: 1px solid rgba(202, 218, 213, 1);
+    padding: 0.2rem 0;
+  }
+  
+   .technician .details .xiangqing .shicao .mingcheng,
+   .technician .details .xiangqing .shicao .zongji {
+    width: 1.78rem;
+  }
+  
+   .technician .details .xiangqing .shicao .zongji:first-child {
+    border-left: none;
+  }
+  
+   .technician .details .xiangqing .shicao .mingcheng {
+    border-left: none;
+  }
+  
+   .technician .details .xiangqing .shicao .zongji {
+    font-weight: bold;
+    color: #06e39d;
+  }
+  
+   .technician .details .xiangqing .shicao .money,
+   .technician .details .keliu .people {
+    width:2.01rem;
+  }
+  
+   .technician .details .xiangqing .shicao .num,
+   .technician .details .keliu .customer {
+    width: 2.01rem;
+  }
+  
+   .technician .details .xiangqing .shicao .chanpin {
+    background-color: #f6faff;
+  }
+  
+   .technician .details .xiangqing .shicao .zongji.chanpin {
+    font-weight: bold;
+    color: rgba(6, 162, 227, 1);
+    background-color: #f5f7f6;
+  }
+  
+   .technician .details .xiangqing .shicao .xianjin {
+    background-color: #fcf6ff;
+  }
+  
+   .technician .details .xiangqing .shicao .zongji.xianjin {
+    font-weight: bold;
+    color: #5906e3;
+    background-color: #f5f7f6;
+  }
+  
+   .technician .details .xiangqing .shicao .shihaolei {
+    background-color: #fffcf6;
+  }
+  
+   .technician .details .xiangqing .shicao .zongji.shihao {
+    font-weight: bold;
+    color: #e37306;
+    background-color: #f5f7f6;
+  }
+  
+   .technician .details .main {
+    height: 100%;
+  }
+  
+   .technician .details .xiangqing .shicao.shihaolei-one td,
+   .technician .details .xiangqing .shicao.shihaolei-two td {
+    padding: 0.17rem 0;
+  }
+  
+   .technician .details .xiangqing .shicao.shihaolei-two th {
+    padding: 0.4rem 0.27rem;
+  }
+  
+   .technician .details .xiangqing .shicao.shihaolei-two .zongji {
+    font-weight: bold;
+    color: #e31006;
+    background-color: #f5f7f6;
+  }
+  
+   .technician .details .main .keliu {
+    border-collapse: collapse;
+    font-weight: normal;
+    text-align: center;
+    background-color: #f6f6ff;
+  }
+  
+   .technician .details .keliu .people,
+   .technician .details .keliu .customer {
+    padding: 0.17rem 0.03rem;
+  }
+  
+   .technician .details .main .keliu th {
+    border-bottom: 1px solid rgba(202, 218, 213, 1);
+    border-left: 1px solid rgba(202, 218, 213, 1);
+  }
+  
+   .technician .details .main .keliu tr:first-child th {
+    border-top: 1px solid rgba(202, 218, 213, 1);
+  }
+  
+   .technician .details .main .keliu tr:first-child th:first-child {
+    border-top: none;
+  }
+  
+   .technician .details .main .keliu .tablehead {
+    border-bottom: none;
+    border-left: none;
+  }
+  
+   .technician .details .main .keliu .tablebot,
+   .technician .details .main .danjia .price {
+    background-color: #f5f7f6;
+  }
+  
+   .technician .details .main .keliu .customer.last {
+    border-right: 1px solid rgba(202, 218, 213, 1);
+  }
+  
+   .technician .details .main .keliu .people.one,
+   .technician .details .main .keliu .customer.one {
+    border-left: none;
+  }
+  
+   .technician .details .main .danjia th {
+    padding: 0.17rem 0.021rem;
+    width: 3.4rem;
+    font-weight: normal;
+    background-color: #f6fffc;
+  }
+  
+   .technician .details .main .danjia .price {
+    /* border-right: 1px solid rgba(202, 218, 213, 1); */
+    border-bottom: 1px solid rgba(202, 218, 213, 1);
+    width: 4.3rem;
+  }

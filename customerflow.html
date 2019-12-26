@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>客流分析</title>
+
+    <script src="./js/publicSize.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="js/pageinit.js"></script>
+    <script src="./js/pagenavigation.js"></script>
+    <link rel="stylesheet" href="./css/public.css" />
+    <link rel="stylesheet" href="./css/customerflow.css">
+    <script src="./laydate/laydate.js"></script>
+    <link rel="stylesheet" href="./css/mask.css" />
+</head>
+
+<body>
+    <div class="customerflow">
+        <header>
+            <div class="left">
+                <p id="username">花惠の小铺</p>
+                <span id="userid">ID:10201351</span>
+            </div>
+            <div class="right" id="changeshopbtn">
+                <button class="change" id="btn">切换店铺</button>
+            </div>
+        </header>
+        <div class="container">
+            <div class="title">
+                <select class="form" id="pagelist" name="">
+                        <option value="美容师分析表">美容师分析表</option>
+                        <option value="技师分析表">技师分析表</option>
+                        <option value="项目分析表">项目分析表</option>
+                        <option value="经营分析表">经营分析表</option>
+                        <option value="客流分析表">客流分析表</option>
+                        <option value="顾客消费动态">顾客消费动态</option>
+                        <option value="顾问分析表">顾问分析表</option>
+
+
+                </select>
+                <select class="report" id="period" name="">
+                    <option value="日报">日报</option>
+                    <option value="周报">周报</option>
+                    <option value="月报">月报</option>
+                    <option value="季报">季报</option>
+                    <option value="年报">年报</option>
+                    <option value="其他">时间选择</option>
+                </select>
+            </div>
+            <div class="search">
+                <div class="left">
+                    <input type="text" class="dateInput" id="test-n3" disabled/>
+                    <span>至</span>
+                    <input type="text" class="dateInput" id="test-n4" disabled/>
+                    <!-- <input type="text" class="name" placeholder="请输入技师姓名"> -->
+                </div>
+                <div class="right">
+                    <span class="sure" onclick="querydata()">确定</span></div>
+            </div>
+        </div>
+        <div class="bot">
+            <table border="0" cellpadding="0" cellspacing="0" class="formhead" id="datalist">
+                <tr class="oneline">
+                    <td rowspan="2" class="tablehead">序号</td>
+                    <td colspan="2" class="times">到店次数</td>
+                    <td colspan="2" class="last times">实耗金额</td>
+                </tr>
+                <tr class="tablebot">
+                    <td id="money">顾客姓名</td>
+                    <td id="num">次数</td>
+                    <td id="money">顾客姓名</td>
+                    <td id="num" class="last">金额</td>
+                </tr>
+
+            </table>
+        </div>
+        <!-- 蒙层 -->
+        <div class="mask" id="box" style="display: none">
+            <ul id="shopidlist">
+                <li>花惠医学美容养生会馆（建设大街店）</li>
+                <li>花惠美容美体机构（博维店）</li>
+                <li>花惠美容美体机构（太阳城店）</li>
+                <li>花惠健康美学中心（世纪港湾）</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./js/reportData.js"></script>
+    <script src="./js/mask.js"></script>
+
+    <script>
+        //请求数据
+        function querydata() {
+            var starttime = $("#test-n3").val();
+            var endtime = $("#test-n4").val();
+
+            var period = $("#period").val();
+
+            var shopid = parseInt(getCookie("userid"));
+
+
+            Ajax.get(
+                {
+                    url: `m/cuflow`,
+                    data: {
+                        shopid: shopid,
+                        period: period,
+                        starttime: starttime,
+                        endtime: endtime
+                    }
+                },
+                res => {
+                    console.log(res);
+                    if (res.code==0){
+                        renderdata(res.data);
+                    }else {
+                        alert(res.msg);
+                    }
+                }
+            );
+
+        }
+
+
+        //渲染数据
+        function renderdata(data) {
+            //清除原有数据
+            for (let i = 0; i < $(".dataline").length; i++) {
+                $($(".dataline")[i]).empty()
+            }
+
+            var line=0;
+
+            var downtoshoptimes=null;//到店次数
+            var actualconsumption=null;//实际耗金额
+            var 到店次数统计=null;//到店次数统计
+
+
+            //选出到店次数和实耗金额大的那个数
+            for (let i = 0; i < data.length; i++) {
+                if (data[i]["type"]!="到店次数统计"){
+                    if (data[i]["con"].length>line){
+                        line=data[i]["con"].length;
+                    }
+                }
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                var sadfadsw = data[i]["type"];
+                if (data[i]["type"]=="到店次数统计"){
+                    到店次数统计=data[i]["con"];
+                }else if (data[i]["type"]=="到店次数"){
+                    downtoshoptimes=data[i]["con"];
+                }else if (data[i]["type"]=="实耗金额"){
+                    actualconsumption=data[i]["con"];
+                }
+
+            }
+
+            //渲染每一行
+            for (let i = 0; i < line; i++) {
+                var li=` <tr class="dataline">
+                            <td>${i+1}</td>
+                            <td>${downtoshoptimes[i]!=null?downtoshoptimes[i]["customer"]:""}</td>
+                            <td>${downtoshoptimes[i]!=null?downtoshoptimes[i]["times"]:""}</td>
+                            <td>${actualconsumption[i]!=null?actualconsumption[i]["customer"]:""}</td>
+                            <td>${actualconsumption[i]!=null?(actualconsumption[i]["smoney"]==null?0:actualconsumption[i]["smoney"]):""}</td>
+                </tr>`
+
+                $("#datalist").append(li)
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>

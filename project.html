@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>项目分析表</title>
+    <script src="./js/publicSize.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="js/pageinit.js"></script>
+    <script src="./js/pagenavigation.js"></script>
+    <link rel="stylesheet" href="./css/public.css" />
+    <link rel="stylesheet" href="./css/project.css">
+    <script src="./laydate/laydate.js"></script>
+    <link rel="stylesheet" href="./css/mask.css" />
+</head>
+
+<body>
+    <div class="project">
+        <header>
+            <div class="left">
+                <p id="username">花惠の小铺</p>
+                <span id="userid">ID:10201351</span>
+            </div>
+            <div class="right" id="changeshopbtn">
+                <button class="change" id="btn">切换店铺</button>
+            </div>
+        </header>
+        <div class="container">
+            <div class="title">
+                <select class="form" id="pagelist" name="">
+                        <option value="美容师分析表">美容师分析表</option>
+                        <option value="技师分析表">技师分析表</option>
+                        <option value="项目分析表">项目分析表</option>
+                        <option value="经营分析表">经营分析表</option>
+                        <option value="客流分析表">客流分析表</option>
+                        <option value="顾客消费动态">顾客消费动态</option>
+                        <option value="顾问分析表">顾问分析表</option>
+
+
+                </select>
+                <select class="report" id="period" name="">
+                    <option value="日报">日报</option>
+                    <option value="周报">周报</option>
+                    <option value="月报">月报</option>
+                    <option value="季报">季报</option>
+                    <option value="年报">年报</option>
+                    <option value="其他">时间选择</option>
+                </select>
+            </div>
+            <div class="search">
+                <div class="left">
+                <input type="text" class="dateInput" id="test-n3" disabled/>
+                <span>至</span>
+                <input type="text" class="dateInput" id="test-n4" disabled/>
+                <!-- <input type="text" class="name" placeholder="请输入技师姓名"> --></div>
+                <div class="right">
+                <span class="sure" onclick="querydata()">确定</span></div>
+            </div>
+        </div>
+        <div class="proranking">
+            <table cellspacing="0" class="proname">
+                <tr>
+                    <th>产品排名</th>
+                </tr>
+            </table>
+            <table cellspacing="0" id="projectcontent">
+                <tr class="firstline">
+                    <td>排名</td>
+                    <td>项目名称</td>
+                    <td>金额</td>
+                    <td>数量</td>
+                </tr>
+<!--                <tr>-->
+<!--                    <td>1</td>-->
+<!--                    <td>身体养护</td>-->
+<!--                    <td>4000.00</td>-->
+<!--                    <td>1</td>-->
+<!--                </tr>-->
+<!--                <tr class="lastline">-->
+<!--                    <td>总计</td>-->
+<!--                    <td></td>-->
+<!--                    <td>4000.0</td>-->
+<!--                    <td>1</td>-->
+                </tr>
+            </table>
+        </div>
+        <div class="cosranking">
+                <table cellspacing="0" class="proname">
+                    <tr>
+                        <th>美容排名</th>
+                    </tr>
+                </table>
+                <table cellspacing="0" id="beautycontent">
+                    <tr class="firstline">
+                        <td>排名</td>
+                        <td>项目名称</td>
+                        <td>金额</td>
+                        <td>数量</td>
+                    </tr>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="bodyranking">
+                    <table cellspacing="0" class="proname">
+                        <tr>
+                            <th>美体排名</th>
+                        </tr>
+                    </table>
+                    <table cellspacing="0" id="bodycontent">
+                        <tr class="firstline">
+                            <td>序号</td>
+                            <td>项目名称</td>
+                            <td>金额</td>
+                            <td>数量</td>
+                        </tr>
+
+                    </table>
+                </div>
+                <!-- 蒙层 -->
+      <div class="mask" id="box" style="display: none">
+            <ul id="shopidlist">
+<!--              <li>花惠医学美容养生会馆（建设大街店）</li>-->
+<!--              <li>花惠美容美体机构（博维店）</li>-->
+<!--              <li>花惠美容美体机构（太阳城店）</li>-->
+<!--              <li>花惠健康美学中心（世纪港湾）</li>-->
+            </ul>
+          </div>
+    </div>
+    <script src="./js/reportData.js"></script>
+    <script src="./js/mask.js"></script>
+
+    <script>
+
+
+        var projectcontent = $("#projectcontent");
+        var beautycontent = $("#beautycontent");
+        var bodycontent = $("#bodycontent");
+
+
+
+
+        function querydata() {
+            var starttime = $("#test-n3").val();
+            var endtime = $("#test-n4").val();
+            var period = $("#period").val();
+            var shopid = parseInt(getCookie("userid"));
+
+            Ajax.get(
+                {
+                    url: `m/project`,
+                    data: {
+                        shopid: shopid,
+                        starttime: starttime,
+                        endtime: endtime,
+                        period: period
+                    }
+                },
+                res => {
+                    console.log(res);
+                    if (res.code==0){
+                        renderdata(res.data);
+                    }else {
+                        alert(res.msg);
+                    }
+                }
+            );
+        }
+
+        function renderdata(res) {
+
+            //清除原有数据
+            for (let i = 0; i < $(".dataline").length; i++) {
+                $($(".dataline")[i]).empty()
+            }
+
+
+            var beauty = res.beauty;
+            var body = res.body;
+            var product = res.product;
+
+            for (let i = 0; i < product.length; i++) {
+                var temp = product[i];
+                var li=$(`
+                         <tr class="${temp["name"]=='总计'?'lastline dataline':'dataline'}">
+                    <td>${i+1}</td>
+                    <td>${temp["name"]}</td>
+                    <td>${temp["summoney"]}</td>
+                    <td>${temp["sumcount"]}</td>
+                </tr>
+                `)
+                projectcontent.append(li);
+            }
+
+            for (let i = 0; i < body.length; i++) {
+                var temp = body[i];
+                var li=$(`
+                         <tr class="${temp["name"]=='总计'?'lastline dataline':'dataline'}">
+                    <td>${i+1}</td>
+                    <td>${temp["name"]}</td>
+                    <td>${temp["summoney"]}</td>
+                    <td>${temp["sumcount"]}</td>
+                </tr>
+                `)
+                bodycontent.append(li);
+            }
+
+            for (let i = 0; i < beauty.length; i++) {
+                var temp = beauty[i];
+                var li=$(`
+                        <tr class="${temp["name"]=='总计'?'lastline dataline':'dataline'}">
+                    <td>${i+1}</td>
+                    <td>${temp["name"]}</td>
+                    <td>${temp["summoney"]}</td>
+                    <td>${temp["sumcount"]}</td>
+                </tr>
+                `)
+                beautycontent.append(li);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

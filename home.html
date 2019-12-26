@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>首页</title>
+  <script src="./js/publicSize.js"></script>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/config.js"></script>
+
+  <script src="./js/home.js"></script>
+  <link rel="stylesheet" href="./css/iconfont.css" />
+  <link rel="stylesheet" href="./css/public.css" />
+  <link rel="stylesheet" href="./css/home.css" />
+  <link rel="stylesheet" href="./css/mask.css" />
+  <!-- <script src="./js/echarts.min.js"></script> -->
+</head>
+
+<body>
+  <div class="home">
+    <div class="user">
+      <header class="workJournalHeader">
+        <div class="herderLeft">
+          <span class="iconfont icon-guanbi"></span>
+          <span>首页</span>
+        </div>
+        <div class="herderRight">
+          <span class="iconfont icon-gengduo"></span>
+        </div>
+      </header>
+      <!-- 用户 -->
+      <div class="bot">
+        <img class="touxiang" src="./images/ef6bce096af645a45192935b6f5e282.jpg" alt />
+        <div class="information">
+          <p id="username">-</p>
+          <span id="userid">-</span>
+          <div class="position" id="geo">
+            <img src="./images/weizhi_28.png" alt />
+            <span id="geotext">-</span>
+          </div>
+        </div>
+        <!--          <button class="change" id="btn">切换店铺</button>-->
+      </div>
+    </div>
+    <!-- 蒙层 -->
+    <div class="mask" id="box" style="display: none">
+      <ul id="shopidlist">
+        <!--          <li onclick="setshopidcookie(this)" data-shopid="1">花惠医学美容养生会馆（建设大街店）</li>-->
+        <!--          <li onclick="setshopidcookie(this)" data-shopid="2" >花惠美容美体机构（博维店）</li>-->
+        <!--          <li onclick="setshopidcookie(this)" data-shopid="3">花惠美容美体机构（太阳城店）</li>-->
+        <!--          <li onclick="setshopidcookie(this)" data-shopid="4">花惠健康美学中心（世纪港湾）</li>-->
+      </ul>
+    </div>
+    <!-- 营业额 -->
+    <div class="yingye">
+      <div class="title">
+        <div class="today" id="yingyetitle">今日营业额</div>
+        <!--          <a class="more" href="beauticiantable.html">查看更多收入数据>></a>-->
+        <button class="more" onclick="showallshoppopup('beauticiantable.html')">查看更多收入数据>></button>
+      </div>
+      <div class="main">
+        <div class="top">
+          <div>
+            <span id="客流">-</span>
+            <h4>客流</h4>
+          </div>
+          <div>
+            <span id="人头">-</span>
+            <h4>人头</h4>
+          </div>
+          <div>
+            <span id="实操数">-</span>
+            <h4>实操数</h4>
+          </div>
+        </div>
+        <div class="bot">
+          <div>
+            <span id="项目数">-</span>
+            <h4>项目数</h4>
+          </div>
+          <div>
+            <span id="客人单价">-</span>
+            <h4>客人单价</h4>
+          </div>
+          <div>
+            <span id="现金">-</span>
+            <h4>现金</h4>
+          </div>
+        </div>
+      </div>
+      <div class="examine">
+        <div id="reviewbtn" style="height: 50px;">
+          <a href="./billaudit.html" style="margin-bottom: 20px" >账单审核</a>
+
+        </div>
+        <div id="companydatabtn">
+          <a href="./company.html">本公司数据</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- <script src="./js/bar.js"></script> -->
+  <script src="./js/mask.js"></script>
+  <!-- <script type="text/javascript">
+      var oWeishen = document.getElementById("weishen");
+      var oYishen = document.getElementById("yishen");
+      oWeishen.onclick = function() {
+        oWeishen.style.backgroundColor = "rgb(218, 222, 220)";
+        oYishen.style.backgroundColor = "#02b77e";
+      };
+    </script> -->
+</body>
+
+</html>

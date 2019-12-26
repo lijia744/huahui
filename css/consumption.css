@@ -1,0 +1,118 @@
+.consumption {
+    font-size: 0.14rem;
+    position: relative;
+  }
+  .consumption header {
+    background-image: url("../images/home\ \(1\).jpg");
+    background-size: cover;
+    color: #fff;
+    font-size: 0.26rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.54rem 0.3rem 0.8rem 0.3rem;
+  }
+  .consumption header p {
+    font-size: 0.36rem;
+  }
+  .consumption header .change {
+    width: 1.34rem;
+    height: 0.5rem;
+    text-align: center;
+    font-size: 0.22rem;
+    background-color: #e3cc06;
+    margin-top: 0.1rem;
+    border-radius: 2rem 2rem 2rem 2rem;
+    border: none;
+    outline: none;
+    color: #1b1b1a;
+  }
+  .consumption .container {
+    width: 100%;
+    padding: 0.87rem 0.3rem 0rem 0.3rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    position: absolute;
+    top: 1.8rem;
+    background-color: #fff;
+  }
+  .consumption .container .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.24rem;
+  }
+  .consumption .container .title .form {
+    font-size: 0.36rem;
+    border: none;
+    outline: none;
+    background-color: #fff;
+  }
+  .consumption .container .title .report,.consumption .container .title .pay {
+    font-size: 0.27rem;
+    background-color: #e6eaea;
+    border-radius: 0.31rem;
+    border: none;
+    padding: 0.15rem 0.26rem;
+    outline: none;
+  }
+  .consumption .container .search input {
+    width: 1.6rem;
+    border: 1px solid rgba(109, 113, 113, 0.2);
+    color: #86938f;
+    border-radius: 0.3rem;
+    text-align: center;
+    padding: 0.14rem 0.06rem;
+    font-size: 0.2rem;
+    outline: none;
+  }
+  /* .consumption .container .search span{
+    padding: 0 0.1rem;
+  } */
+  .consumption .container .search .name{
+    width: 2.1rem;
+  }
+  .consumption .container .search .sure{
+    color: #0EE3A0;
+  }
+  .consumption .container .search{
+    display: flex;
+    align-items: center;
+  }
+  .consumption .container .search .right{
+    width: 0.7rem;
+  }
+  .consumption .container .search .left{
+    flex-grow: 1;
+  }
+  .consumption .bot .name{
+      border-top: 1px solid #e2e3e3;
+      /*margin-top: 2.6rem;*/
+      padding: 0.0rem 0 0.0rem 0.3rem;
+      font-size: 0.36rem;
+  }
+  .consumption .bot table{
+    width: 100%;
+    text-align: center;
+    color: #353838;
+}
+  .consumption .bot .formhead{
+      background-color: #EDFBF7;
+  }
+  .consumption .bot .formfot{
+      background-color: #06e39d;
+      color: #fff;
+  }
+  .consumption .bot table td{
+    padding: 0.17rem 0;
+    width:1.3rem;
+    border-bottom: 1px solid #e2e3e3;
+    border-right: 1px solid #e2e3e3;
+  }
+  .consumption .bot table .custdata{
+      width: 1.44rem;
+  }
+  .consumption .bot table .projectname{
+      width: 2.1rem;
+  }
+  .consumption .bot table .hand{
+      border-right: none;
+  }

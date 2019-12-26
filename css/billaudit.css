@@ -1,0 +1,163 @@
+.billaudit {
+    font-size: 0.14rem;
+    position: relative;
+  }
+  .billaudit header {
+    background-image: url("../images/home\ \(1\).jpg");
+    background-size: cover;
+    color: #fff;
+    font-size: 0.26rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.54rem 0.3rem 0.8rem 0.3rem;
+  }
+  .billaudit header p {
+    font-size: 0.36rem;
+  }
+  .billaudit header .change {
+    width: 1.34rem;
+    height: 0.5rem;
+    text-align: center;
+    font-size: 0.22rem;
+    background-color: #e3cc06;
+    margin-top: 0.1rem;
+    border-radius: 2rem 2rem 2rem 2rem;
+    border: none;
+    outline: none;
+    color: #1b1b1a;
+  }
+  .billaudit .container {
+    width: 100%;
+    padding: 0.87rem 0.3rem 0rem 0.3rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    position: absolute;
+    top: 1.6rem;
+    background-color: #fff;
+  }
+  .billaudit .container .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.24rem;
+    font-size: 0.36rem;
+  }
+  .billaudit .container .title .form {
+    font-size: 0.36rem;
+  background-color: #fff;
+  border: none;
+    outline: none;
+  }
+  .billaudit .container .title .report {
+    font-size: 0.27rem;
+    background-color: #e6eaea;
+    border-radius: 0.31rem;
+    border: none;
+    padding: 0.15rem 0.26rem;
+    outline: none;
+  }
+  .billaudit .container .search{
+      display: flex;
+      align-items: center;
+  }
+  .billaudit .container .search .right{
+      width: 1rem;
+  }
+  .billaudit .container .search .left{
+      flex-grow: 1;
+  }
+  .billaudit .container .search input {
+    width: 1.6rem;
+    border: 1px solid rgba(109, 113, 113, 0.2);
+    color: #86938f;
+    border-radius: 0.3rem;
+    text-align: center;
+    padding: 0.14rem 0.06rem;
+    font-size: 0.2rem;
+    outline: none;
+  }
+  .billaudit .container .search span{
+    padding: 0 0.1rem;
+  }
+  .billaudit .container .search .name{
+    width: 2.1rem;
+  }
+  .billaudit .container .search .sure{
+    color: #0EE3A0;
+  }
+  .billaudit .bot{
+    margin-top: 1rem;
+    width: 100%;
+}
+.billaudit .bot .form-head{
+    background-color: #EDFBF7;
+    
+}
+.billaudit .bot .form-main{
+    background-color: #fff;
+}
+.billaudit .bot .form-head td,.billaudit .bot .form-main td{
+    text-align: center;padding: 0.17rem 0;
+    color: #353838; border-right: 1px solid #D3D5D4;
+}
+.billaudit .bot .form-main td{
+    border-bottom: 1px solid #D3D5D4;
+   
+    padding: 0.2rem 0;
+}
+.billaudit .bot td:last-child{
+    border-right: 0;
+}
+.billaudit .detail {
+    z-index: 9;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #eeeeee;
+    font-size: 20px;
+  }
+  .billaudit .detail ul {
+    background-color: #fff;
+    margin-top: 1.6rem;
+    height: 11.4rem;
+    color: #939494;
+    /* padding: 0.6rem 0.6rem 0.6rem 1.5rem; */
+      font-size: 0.3rem;
+  }
+  .billaudit .detail ul .btn{
+    margin-top: 25px;
+    text-align: center;
+  }
+  .billaudit .detail ul .btn button{
+    background-color: #0EE3A0;
+    border: none;
+    padding: 0.2rem;
+    color: #fff;
+    border-radius: 0.1rem;
+  }
+  .billaudit .detail ul .btn button:last-child{
+    background-color: #939494;
+  }
+  .billaudit .detail ul .click{
+    padding: 0.2rem 0.5rem 0 0.5rem;
+    color: black;
+    font-size: 0.34rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .billaudit .detail ul li{
+      display: flex;
+      margin-bottom: 0.1rem;
+  }
+  .billaudit .detail ul li span{
+      display: block;
+  }
+  .billaudit .detail ul li .item{
+  width: 2.3rem;
+  text-align: left; margin-left: 1.5rem;
+  }
+  .billaudit .detail ul li .content{
+      color:#161717
+  }

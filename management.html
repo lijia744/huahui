@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>经营分析表</title>
+    <script src="./js/publicSize.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="js/pageinit.js"></script>
+    <script src="./js/pagenavigation.js"></script>
+    <link rel="stylesheet" href="./css/public.css" />
+    <link rel="stylesheet" href="./css/technician.css">
+    <link href="./css/mask.css" rel="stylesheet" />
+    <script src="./laydate/laydate.js"></script>
+
+</head>
+
+<body>
+    <div class="technician">
+        <header>
+            <div class="left">
+                <p id="username">花惠の小铺</p>
+                <span id="userid">ID:10201351</span>
+            </div>
+            <div class="right" id="changeshopbtn">
+                <button class="change" id="btn">切换店铺</button>
+            </div>
+        </header>
+        <div class="container">
+            <div class="title">
+                <select class="form" id="pagelist" name="">
+                        <option value="美容师分析表">美容师分析表</option>
+                        <option value="技师分析表">技师分析表</option>
+                        <option value="项目分析表">项目分析表</option>
+                        <option value="经营分析表">经营分析表</option>
+                        <option value="客流分析表">客流分析表</option>
+                        <option value="顾客消费动态">顾客消费动态</option>
+                        <option value="顾问分析表">顾问分析表</option>
+
+
+                </select>
+                <select class="report" id="period" name="">
+                    <option value="日报">日报</option>
+                    <option value="周报">周报</option>
+                    <option value="月报">月报</option>
+                    <option value="季报">季报</option>
+                    <option value="年报">年报</option>
+                    <option value="其他">时间选择</option>
+                </select>
+            </div>
+            <div class="search">
+                <div class="left">
+                <input type="text" class="dateInput" id="test-n3" disabled/>
+                <span>至</span>
+                <input type="text" class="dateInput" id="test-n4" disabled/>
+<!--                <input type="text" class="name" placeholder="请输入技师姓名">-->
+               </div>
+               <div class="right">
+                <span class="sure" onclick="querydata()">确定</span></div>
+            </div>
+        </div>
+        <div  class="details">
+                <div class="main">
+                    <table class="title">
+                        <thead class="biaotou one">
+                            <tr>
+                                <th rowspan="2" class="tablehead">技师分析表</th>
+                            </tr>
+                            <tr class="tablebot">
+                                <th id="money">金额</th>
+                                <th id="num">数量</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <table class="xiangqing" id="xiangqing">
+                        <!-- 实操类 -->
+                        <thead class="shicao dataline">
+                            <tr>
+                                <th rowspan="4">实操类</th>
+                                <td class="mingcheng">美容</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="mingcheng">美体</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="mingcheng">仪器</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="zongji">总计</td>
+                                <td class="zongji">-</td>
+                                <td class="zongji">-</td>
+                            </tr>
+                        </thead>
+                        <!-- 产品类 -->
+                        <thead class="shicao dataline">
+                            <tr>
+                                <th rowspan="4" class="chanpin">产品类</th>
+                                <td class="mingcheng">卡扣产品</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="mingcheng">现金产品</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="mingcheng">赠送产品</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="zongji chanpin">总计</td>
+                                <td class="zongji chanpin">-</td>
+                                <td class="zongji chanpin">-</td>
+                            </tr>
+                        </thead>
+                        <!-- 现金类 -->
+                        <thead class="shicao dataline">
+                            <tr>
+                                <th rowspan="4" class="xianjin">现金类</th>
+                                <td class="mingcheng">现金产品</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="mingcheng">现金卡</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="mingcheng">现金实操</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="zongji xianjin">总计</td>
+                                <td class="zongji xianjin">-</td>
+                                <td class="zongji xianjin">-</td>
+                            </tr>
+                        </thead>
+                        <!-- 实耗类一 -->
+                        <thead class="shicao shihaolei-one dataline">
+                            <tr>
+                                <th rowspan="6" class="shihaolei">实耗类</th>
+                                <td class="mingcheng">卡扣产品</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="mingcheng">卡扣实操</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="mingcheng">现金产品</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="mingcheng">现金实操</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="mingcheng">赠送实操</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="zongji shihao">总计</td>
+                                <td class="zongji shihao">-</td>
+                                <td class="zongji shihao">-</td>
+                            </tr>
+                        </thead>
+                        <!-- 实耗类二 -->
+                        <thead class="shicao shihaolei-two dataline">
+                            <tr>
+                                <th rowspan="4">实耗类</th>
+                                <td class="mingcheng">赠送产品</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="mingcheng">赠送实操</td>
+                                <td class="money">-</td>
+                                <td class="num">-</td>
+                            </tr>
+                            <tr>
+                                <td class="zongji">总计</td>
+                                <td class="zongji">-</td>
+                                <td class="zongji">-</td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <!-- 人头客流 -->
+                    <table class="keliu">
+                        <thead class="biaotou">
+                            <tr>
+                                <th class="tablehead" rowspan="2">经营分析表</th>
+                                <th colspan="1" class="people one">人头</th>
+                                <th colspan="1" class="customer">客流</th>
+                            </tr>
+                            <tr class="tablebot">
+                                <th class="customer one" id="headcount">-</th>
+                                <th class="customer" id="humantraffic">-</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <table class="danjia">
+                        <tr>
+                            <th>平均客单价</th>
+                            <th class="price" id="averageprice">-</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+    </div>
+    <div class="mask" id="box" style="display: none">
+        <ul id="shopidlist">
+<!--            <li>花惠医学美容养生会馆（建设大街店）</li>-->
+<!--            <li>花惠美容美体机构（博维店）</li>-->
+<!--            <li>花惠美容美体机构（太阳城店）</li>-->
+<!--            <li>花惠健康美学中心（世纪港湾）</li>-->
+        </ul>
+    </div>
+    <script src="./js/reportData.js"></script>
+    <script src="./js/mask.js"></script>
+
+    <script>
+
+        function querydata() {
+            var starttime = $("#test-n3").val();
+            var endtime = $("#test-n4").val();
+            var period = $("#period").val();
+            var shopid = parseInt(getCookie("userid"));
+
+            Ajax.get(
+                {
+                    url: `m/management`,
+                    data: {
+                        shopid: shopid,
+                        starttime: starttime,
+                        endtime: endtime,
+                        period: period
+                    }
+                },
+                res => {
+                    console.log(res);
+                    if (res.code==0){
+                        renderdata(res.data);
+                    }else {
+                        alert(res.msg);
+                    }
+                }
+            );
+        }
+
+        function renderdata(res) {
+            var managementanalysis = res.managementanalysis;
+            var tablefooter = res.tablefooter;
+
+            //清除原有数据
+            for (let i = 0; i < $(".dataline").length; i++) {
+                $($(".dataline")[i]).empty()
+            }
+
+            for (let i = 0; i < managementanalysis.length; i++) {
+                var type = managementanalysis[i].type;//实操，产品....
+                var t=$(`<thead class="shicao dataline">
+                        </thead>`)
+                var con = managementanalysis[i].con;//type的数据arr
+
+                for (let j = 0; j < con.length; j++) {
+                    var temp = con[j];
+                    var tr=$(`<tr>
+                                <th rowspan="${j==0?con.length:''}" style="${j!=0?'display:none':''}" class="${i%2==0?'shicao':'chanpin'}">${type}</th>
+                                <td class="${temp.category2=='总计'?'zongji':'mingcheng'}">${temp.category2}</td>
+                                <td class="${temp.category2=='总计'?'zongji':'money'}">${temp.summoney}</td>
+                                <td class="${temp.category2=='总计'?'zongji':'num'}">${temp.sumcount}</td>
+                            </tr>`)//一行
+
+                    t.append(tr)
+                }
+                $("#xiangqing").append(t)
+
+            }
+
+            //底下的三个数据
+            $("#averageprice").text(tablefooter.averageprice);
+            $("#headcount").text(tablefooter.headcount);
+            $("#humantraffic").text(tablefooter.humantraffic);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/publicSize.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/config.js"></script>
+    <link rel="stylesheet" href="./css/public.css" />
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="head-portrait">
+        <img src="./images/index (1).png" alt="">
+    </div>
+    <div class="main">
+        <div class="account">
+            <img src="./images/密码 (1).png" alt="">
+            <input type="text" placeholder="请输入用户名" id="name">
+        </div>
+        <div class="passwd">
+            <img src="./images/钥匙 拷贝.png" alt="">
+            <input type="password" placeholder="请输入密码" id="passwd">
+        </div>
+    </div>
+    <div class="btn">
+    <button id="loginbtn" onclick="login()">登录</button></div>
+
+
+    <script>
+
+        //浏览器cookies异步加载，如果没有cookies会等待cookies加载完成，
+        //如果之前有cookie，并且正在加载新的cookies，下一个请求不会等待新的cookies加载完成，会发送之前的cookies
+        //所以清除之前的cookies
+        window.onload=function clearcookie() {
+            Ajax.get(
+                {
+                    url: `clearjessionid`
+                },
+                res => {
+                    console.log(res);
+                }
+            );
+        };
+
+        function login() {
+            var username=$("#name").val();
+            var passwd=$("#passwd").val();
+
+            Ajax.post(
+                {
+                    url: `login`,
+                    data: {
+                        username: username,
+                        password: passwd
+                    }
+                },
+                res => {
+                    console.log(res);
+                    if (res["code"] === 0) {
+                            window.location.href = "./home.html";
+                    } else {
+                        alert(res["msg"]);
+                    }
+                }
+            );
+        }
+
+    </script>
+</body>
+</html>

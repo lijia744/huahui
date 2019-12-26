@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>顾客消费动态</title>
+    <script src="./js/publicSize.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="js/pageinit.js"></script>
+    <script src="./js/pagenavigation.js"></script>
+    <link rel="stylesheet" href="./css/public.css" />
+    <link rel="stylesheet" href="./css/custpay.css">
+    <script src="./laydate/laydate.js"></script>
+    <link rel="stylesheet" href="./css/mask.css" />
+</head>
+
+<body>
+    <div class="custpay">
+        <header>
+            <div class="left">
+                <p id="username">花惠の小铺</p>
+                <span id="userid">ID:10201351</span>
+            </div>
+            <div class="right" id="changeshopbtn">
+                <button class="change" id="btn">切换店铺</button>
+            </div>
+        </header>
+        <div class="container">
+            <div class="title">
+                <select class="form" id="pagelist" name="">
+                        <option value="美容师分析表">美容师分析表</option>
+                    <option value="技师分析表">技师分析表</option>
+                    <option value="项目分析表">项目分析表</option>
+                    <option value="经营分析表">经营分析表</option>
+                    <option value="客流分析表">客流分析表</option>
+                    <option value="顾客消费动态">顾客消费动态</option>
+                    <option value="顾问分析表">顾问分析表</option>
+
+
+                </select>
+                <select class="report" id="period" name="">
+                    <option value="日报">日报</option>
+                    <option value="周报">周报</option>
+                    <option value="月报">月报</option>
+                    <option value="季报">季报</option>
+                    <option value="年报">年报</option>
+                    <option value="其他">时间选择</option>
+                </select>
+                <select class="pay" id="handorcash" name="">
+                    <option value="现金">现金</option>
+                    <option value="实操">实操</option>
+                    <option value="所有">所有</option>
+                </select>
+            </div>
+            <div class="search">
+                <div class="left">
+                    <input type="text" class="dateInput" id="test-n3" disabled/>
+                    <span>至</span>
+                    <input type="text" class="dateInput" id="test-n4" disabled/>
+                    <input class="name" id="customername" placeholder="请输入顾客姓名" type="text">
+                </div>
+                <div class="right">
+                    <span class="sure" onclick="querydata()">确定</span></div>
+            </div>
+        </div>
+        <div class="bot">
+            <div class="infor">
+                <p class="name" id="custname">侯振华</p>
+                <span class="custactive" id="customerstatus">-</span>
+                <p class="distance">距离上次到店<span class="day" id="dayslast">-</span>天</p>
+            </div>
+            <table border="0" cellpadding="0" cellspacing="0" class="formhead">
+                <tr>
+                    <td class="custdata">日期</td>
+                    <td class="projectname">项目名称</td>
+                    <td class="custmoney">金额</td>
+                    <td class="number">数量</td>
+                    <td class="hand">手工</td>
+                </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" class="formain" id="data">
+<!--                <tr>-->
+<!--                    <td class="custdata">2019-10-10</td>-->
+<!--                    <td class="projectname">5980年卡</td>-->
+<!--                    <td class="custmoney">5980.00</td>-->
+<!--                    <td class="number">1</td>-->
+<!--                    <td class="hand">0</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td class="custdata">2019-10-10</td>-->
+<!--                    <td class="projectname">5980年卡</td>-->
+<!--                    <td class="custmoney">5980.00</td>-->
+<!--                    <td class="number">1</td>-->
+<!--                    <td class="hand">0</td>-->
+<!--                </tr>-->
+            </table>
+<!--            <table border="0" cellpadding="0" cellspacing="0" class="formfot">-->
+<!--                <tr>-->
+<!--                    <td class="custdata">总计</td>-->
+<!--                    <td class="projectname"></td>-->
+<!--                    <td class="custmoney">8000.00</td>-->
+<!--                    <td class="number">2</td>-->
+<!--                    <td class="hand">0</td>-->
+<!--                </tr>-->
+<!--            </table>-->
+        </div>
+        <!-- 蒙层 -->
+        <div class="mask" id="box" style="display: none">
+            <ul id="shopidlist">
+<!--                <li>花惠医学美容养生会馆（建设大街店）</li>-->
+<!--                <li>花惠美容美体机构（博维店）</li>-->
+<!--                <li>花惠美容美体机构（太阳城店）</li>-->
+<!--                <li>花惠健康美学中心（世纪港湾）</li>-->
+            </ul>
+        </div>
+    </div>
+    <script src="./js/reportData.js"></script>
+    <script src="./js/mask.js"></script>
+
+    <script>
+        function querydata() {
+            var starttime = $("#test-n3").val();
+            var endtime = $("#test-n4").val();
+            var customername = $("#customername").val();
+            var period = $("#period").val();
+            var handorcash = $("#handorcash").val();
+            var shopid = parseInt(getCookie("userid"));
+
+            Ajax.get(
+                {
+                    url: `m/customer`,
+                    data: {
+                        customer: customername,
+                        shopid: shopid,
+                        starttime: starttime,
+                        endtime: endtime,
+                        period: period,
+                        handorcash: handorcash
+                    }
+                },
+                res => {
+                    console.log(res);
+                    if (res.code==0){
+                        renderdata(res.data);
+                    }else {
+                        alert(res.msg);
+                    }
+                }
+            );
+        }
+        function renderdata(res) {
+
+            $("#custname").text($("#customername").val());
+
+            //清除原有数据
+            for (let i = 0; i < $(".dataline").length; i++) {
+                $($(".dataline")[i]).empty()
+            }
+
+            var lastdays = res["距离上次"];
+            if (lastdays==null||lastdays==-1){
+                $("#dayslast").parent().hide();
+            }else {
+                $("#dayslast").parent().show();
+                $("#dayslast").text(lastdays);
+            }
+
+            var alldata = res["客户信息"];
+
+            if (alldata.length>0){
+                $("#customerstatus").text(alldata[0]["status"])
+            }
+
+            for (let i = 0; i < alldata.length; i++) {
+
+                var li=$(`
+                <tr class="${alldata[i]["projectname"]=="总计"?'formfot dataline':'dataline'}">
+                    <td class="custdata">${alldata[i]["createtime"]==null?'':alldata[i]["createtime"]}</td>
+                    <td class="projectname">${alldata[i]["projectname"]}</td>
+                    <td class="custmoney">${alldata[i]["money"]}</td>
+                    <td class="number">${alldata[i]["times"]}</td>
+                    <td class="hand">${alldata[i]["hand"]}</td>
+                </tr>
+                `)
+                $("#data").append(li)
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

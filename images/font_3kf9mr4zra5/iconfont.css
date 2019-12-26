@@ -1,0 +1,21 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1570936843632'); /* IE9 */
+  src: url('iconfont.eot?t=1570936843632#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPsAAsAAAAACBQAAAOgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqEIINMATYCJAMICwYABCAFhG0HMBvyBhHVmw3Jfhy4sdMc9KXHsBJapH/Oh68z35/5idczFRiUWBjXgkm9NMsjdWIDBKzNXVobaom8RHyLVO3aX3b+th8aUidE/ueY6SJ1b8/z+8IlI3FvtDfAcevAqq8LG/gO5EjP+RbZRVwRizwdCAApFtmAHDl2xhhiUKB5BADx9nBzgDhjAG0oJxCDQFixlYI8ggBi5i4zAOBh8PPkA7YlBhgIWKCqC65HnaF4zeMs9sr/K6w9BITj2QAouwAWwAYABYhxpeMc2CixAQuplaBYBusqJ8Br/v9/T7DafzyAAEQIVCoHACzgBeckpKJTLWUAAJQfrALwqtcTAVQuV9i6VYwsSBzdWT2+OGnMfGrKdHrabHLSZGLCRMubRSXNS8eik68mzapcFp8821TDcRHcgOZc1KxZZKRxZOLciQnjiIQriTz8q8YkcCba2bOjVw9rz2byJpp5UUOrMga4GKlmlmlU0vzoeJI2dUwalTcvKu1q+uz4fJmse3r51bhZccmzzaJl2rmRgyuzh2fHy7S8SWTinIgYpE4elWlzqy6TeiWFi8mRSjsmllyJ5WMTOOOIv29T4uSyuBRvuUwet06ghKkFURG1qbmSYC7/OkRNVKYWyhdkiccBLkNEjlnYq6nQd6uvUC2wsCPHRBm8+z4Webm/GWP2d24dluwADyHbqQUkamFP5Fz+rPpYOTXj5bF6qnnfGs1KS90Kvs2Thfsp3oc7QGPAKFT6dOTocibsYBiz/Jgu1VeoiYEW9uEfQpThsnlfG46mlu5o+DpXHh6g+BBuD60BUaj1qe6x9swqxkADh/D3QbOhAAD8H2ab2a3/9HdwOcnwnp3egV9iGQUAPO2plQW+/8MUMBcgvnMnAf6gENhAbTFSM89CIDgZVKV8YACep7rxH8hj6FXfmteVIRCDf2kuERYmwEKMFUiK3QACyLADhBDjMEix3vHdMhgJBAtCJQDWuckBgb5iYKCLZmChbxBJsfwP+tb+MLCqCxP3jA45tUlP1IQxYwbJB3RaFoKYeRKWn1E+XExpcUC5IzU6DKEX5NMnLJDGWNE8ZcQsQFCZw5E7GzpXQkWlwZQ9xVxtfV9UvZCXlnlrYoegGEMZkPgAWqpUEF5rNil8/xmSHpwYNdS1OO8QaejhQcgTAJAnRQGqu5a7NJ6kCGMCEEgpB46cDTmcKIGqepKBUsyjesQqW77QTEAV3vyq/Om2AUghLRMex2JwhV+lWy0=') format('woff2'),
+  url('iconfont.woff?t=1570936843632') format('woff'),
+  url('iconfont.ttf?t=1570936843632') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1570936843632#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shezhi:before {
+  content: "\e615";
+}
+

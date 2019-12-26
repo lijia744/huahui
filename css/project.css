@@ -1,0 +1,123 @@
+.project {
+  font-size: 0.14rem;
+  position: relative;
+}
+.project header {
+  background-image: url("../images/home\ \(1\).jpg");
+  background-size: cover;
+  color: #fff;
+  font-size: 0.26rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.54rem 0.3rem 0.8rem 0.3rem;
+}
+.project header p {
+  font-size: 0.36rem;
+}
+.project header .change {
+  width: 1.34rem;
+  height: 0.5rem;
+  text-align: center;
+  font-size: 0.22rem;
+  background-color: #e3cc06;
+  margin-top: 0.1rem;
+  border-radius: 2rem 2rem 2rem 2rem;
+  border: none;
+  outline: none;
+  color: #1b1b1a;
+}
+.project .container {
+  width: 100%;
+  padding: 0.87rem 0.3rem 0rem 0.3rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  position: absolute;
+  top: 1.8rem;
+  background-color: #fff;
+}
+.project .container .title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.24rem;
+}
+.project .container .title .form {
+  font-size: 0.36rem;
+  border: none;
+  outline: none;
+  background-color: #fff;
+}
+.project .container .title .report {
+  font-size: 0.27rem;
+  background-color: #e6eaea;
+  border-radius: 0.31rem;
+  border: none;
+  padding: 0.15rem 0.26rem;
+  outline: none;
+}
+.project .container .search input {
+  width: 1.6rem;
+  border: 1px solid rgba(109, 113, 113, 0.2);
+  color: #86938f;
+  border-radius: 0.3rem;
+  text-align: center;
+  padding: 0.14rem 0.06rem;
+  font-size: 0.2rem;
+  outline: none;
+}
+/* .project .container .search span{
+  padding: 0 0.1rem;
+} */
+.project .container .search .name{
+  width: 2.1rem;
+}
+.project .container .search .sure{
+  color: #0EE3A0;
+}
+.project .proranking{
+  margin: 2.46rem 0 0.22rem;
+}
+.project .proname{
+  color: #161717;
+  border-top: 1px solid #D3D5D4;
+  border-bottom: 1px solid #D3D5D4;
+  padding: 0.15rem 0;
+  background-color: #EDFBF7;
+}
+.project table{
+  border: none;width: 100%;text-align: center;
+  color: #353838;
+}
+.project table td{
+  padding: 0.15rem 0;
+  border-bottom: 1px solid #D3D5D4;
+  border-right: 1px solid #D3D5D4;
+}
+.project table .firstline{
+  background-color: #EDFBF7;
+}
+.project table .firstline td{
+  border-bottom: none;
+}
+.project table .lastline{
+  background-color: #06e39d;
+  color: #fff;
+}
+.project .cosranking .proname,.project .cosranking table .firstline{
+  background-color: #FBFBED;
+}
+.project .bodyranking .proname,.project .bodyranking table .firstline{
+  background-color: #FBEDED;
+}
+.project .bodyranking{
+  margin-top: 0.22rem;
+}
+.project .container .search{
+  display: flex;
+  align-items: center;
+}
+.project .container .search .right{
+  width: 0.7rem;
+}
+.project .container .search .left{
+  flex-grow: 1;
+}

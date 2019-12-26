@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="xiangxia" unicode="&#58970;" d="M968.058-88.914l-799.102 843.495h1603.751z"  horiz-adv-x="1947" />
+
+    
+    <glyph glyph-name="chazhao" unicode="&#58914;" d="M705.2 185.2c128.4 128.4 128.4 336.5 0 464.8s-336.5 128.4-464.8 0-128.4-336.5 0-464.8 336.4-128.4 464.8 0zM727.6 140c-147.8-135.9-377.9-132.2-521.3 11.1-147.1 147.2-147.1 385.7 0.1 532.9s385.6 147.1 532.8 0c139.5-139.5 146.7-361.2 21.7-509.2l160-160c9.4-9.4 9.4-24.6 0-34s-24.6-9.4-34 0l-159.3 159.2z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

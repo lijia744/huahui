@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>本公司数据</title>
+    <script src="./js/publicSize.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/config.js"></script>
+
+    <link rel="stylesheet" href="./css/public.css" />
+    <link rel="stylesheet" href="./css/company.css">
+    <script src="./laydate/laydate.js"></script>
+    <link rel="stylesheet" href="./css/mask.css" />
+    <script src="./js/pagenavigation.js"></script>
+    <script src="js/pageinit.js"></script>
+
+</head>
+
+<body>
+    <div class="company">
+        <header>
+            <div class="left">
+                <p id="username">花惠の小铺</p>
+                <span id="userid">ID:10201351</span>
+            </div>
+<!--            <div class="right" id="changeshopbtn">-->
+<!--                <button class="change" id="btn">切换店铺</button>-->
+<!--            </div>-->
+        </header>
+        <div class="container" style="padding-top: 0px">
+                <div class="title">
+                    <select class="form" id="pagelist" name="">
+                        <option value="美容师分析表">美容师分析表</option>
+                        <option value="技师分析表">技师分析表</option>
+                        <option value="项目分析表">项目分析表</option>
+                        <option value="经营分析表">经营分析表</option>
+                        <option value="客流分析表">客流分析表</option>
+                        <option value="顾客消费动态">顾客消费动态</option>
+                        <option value="顾问分析表">顾问分析表</option>
+
+                    </select>
+                </div>
+                <div class="search">
+                    <div class="left">
+                        <input class="dateInput" id="test-n3" type="text" />
+                        <span>至</span>
+                        <input class="dateInput" id="test-n4" type="text" />
+                    </div>
+                    <div class="right">
+                        <span class="sure" onclick="querydata()">确定</span></div>
+                </div>
+            </div>
+        <div class="bot">
+            <table border="0" cellpadding="0" cellspacing="0" class="form-head">
+                <tr>
+                    <td style='width:1.2rem'>店名</td>
+                    <td style='width:2.1rem'>现金</td>
+                    <td style='width:1.3rem'>实耗</td>
+                    <td style='width:1.3rem'>人头</td>
+                    <td style='width:1.5rem'>客流</td>
+                </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" class="form-main" id="datalist">
+                <tr id="line">
+                    <td style='width:1.2rem'>王一一</td>
+                    <td style='width:2.1rem'>身体养护</td>
+                    <td style='width:1.3rem'>4000.00</td>
+                    <td style='width:1.3rem'>1</td>
+                    <td style='width:1.5rem'>张一一</td>
+                </tr>
+            </table>
+        </div>
+        <!-- 蒙层 -->
+        <div class="mask" id="box" style="display: none">
+            <ul id="shopidlist">
+                <li>花惠医学美容养生会馆（建设大街店）</li>
+                <li>花惠美容美体机构（博维店）</li>
+                <li>花惠美容美体机构（太阳城店）</li>
+                <li>花惠健康美学中心（世纪港湾）</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./js/reportData.js"></script>
+    <script src="./js/mask.js"></script>
+
+    <script>
+
+        function querydata() {
+            var starttime = $("#test-n3").val();
+            var endtime = $("#test-n4").val();
+
+            Ajax.get(
+                {
+                    url: `m/brandData`,
+                    data: {
+                        starttime: starttime,
+                        endtime: endtime
+                    }
+                },
+                res => {
+                    console.log(res);
+                    if (res.code==0){
+                        renderdata(res.data);
+                    }else {
+                        alert(res.msg);
+                    }
+                }
+            );
+        }
+
+        function renderdata(data) {
+            $("#datalist").empty()
+            $.each(data, function(index, item) {
+                $("#datalist").append(`
+                <tr id="line">
+                    <td style='width:1.2rem'>${item.name}</td>
+                    <td style='width:2.1rem'>${item.xianjin}</td>
+                    <td style='width:1.3rem'>${item.shicao}</td>
+                    <td style='width:1.3rem'>${item.rentou}</td>
+                    <td style='width:1.5rem'>${item.times}</td>
+                </tr>
+                `);
+            });
+        }
+
+    </script>
+</body>
+
+</html>
